@@ -1,1 +1,3 @@
-Check out http://shopify.github.com/dashing for more information.
+I needed something to push for our project so I don't have to search
+anymore. This is my contribution.
+
