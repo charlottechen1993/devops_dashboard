@@ -4,8 +4,6 @@ $title-color: #FFFFFF;
 $subtitle-color: #C0F5E5;
 
 .widget-text{
-    background-color: $background-color;
-    
     .title{
         color: $title-color;
     }
@@ -14,8 +12,12 @@ $subtitle-color: #C0F5E5;
         color: $title-color;
         line-height: 20px;
     }
-    .user-commit{
-        color: $subtitle-color;
-        margin-top: 30px;
-    }
+}
+
+.user-commit{
+    color: $subtitle-color;
+}
+
+#chart_div{
+    margin: 20px;
 }
