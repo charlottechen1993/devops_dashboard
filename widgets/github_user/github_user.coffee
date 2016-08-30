@@ -1,0 +1,1 @@
+class Dashing.GithubUser extends Dashing.Widget

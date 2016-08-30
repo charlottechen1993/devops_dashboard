@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        <%= yield_content(:title) %>
+    </title>
+    <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
+    <script type="text/javascript" src="/assets/application.js"></script>
+    <!--  GOOGLE Chart API  -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['gantt']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
+    }
 
-  <title><%= yield_content(:title) %></title>
+    function drawChart() {
 
-  <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
-  <script type="text/javascript" src="/assets/application.js"></script>
-  <link rel="stylesheet" href="/assets/application.css">
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
 
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="/assets/favicon.ico">
+      data.addRows([
+        ['Research', 'Find sources',
+         new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
+        ['Write', 'Write paper',
+         null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'Research,Outline'],
+        ['Cite', 'Create bibliography',
+         null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'Research'],
+        ['Complete', 'Hand in paper',
+         null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, 'Cite,Write'],
+        ['Outline', 'Outline paper',
+         null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'Research']
+      ]);
 
-</head>
-  <body>
+      var options = {
+        height: 275
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+    <link rel="stylesheet" href="/assets/application.css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="/assets/favicon.ico"> </head>
+
+<body>
     <div id="container">
-      <%= yield %>
+        <%= yield %>
     </div>
-  
     <% if development? %>
-      <div id="saving-instructions">
-        <p>Paste the following at the top of <i><%= params[:dashboard] %>.erb</i></p>
-        <textarea id="gridster-code"></textarea>
-      </div>
-      <a href="#saving-instructions" id="save-gridster">Save this layout</a>
-    <% end %>
-  </body>
+        <div id="saving-instructions">
+            <p>Paste the following at the top of <i><%= params[:dashboard] %>.erb</i></p>
+            <textarea id="gridster-code"></textarea>
+        </div> <a href="#saving-instructions" id="save-gridster">Save this layout</a>
+        <% end %>
+</body>
+
 </html>
