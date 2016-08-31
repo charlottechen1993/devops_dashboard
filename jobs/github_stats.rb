@@ -28,8 +28,17 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     puts "Commit Number: #{fork_num}"
     
     # get last commit activity
-    commit_history = Octokit.commit_activity_stats(name)    
-    puts "Commit History: #{commit_history}"
+#    commit_history = r.github_status_message
+    commit_array_history = Octokit.commits(name)
+    last_commit_array = commit_array_history[0]
+    last_commit_commit = last_commit_array[:commit]
+    last_commit_committer = last_commit_commit[:committer]
+    last_commit_date = last_commit_committer[:date]
+        puts "Commit Array: #{last_commit_array }"
+        puts "Commit Commit: #{last_commit_commit }"
+        puts "Commit Committer: #{ last_commit_committer }"
+        puts "Commit Date: #{last_commit_date }"
+        
         
     send_event(name, {
       commits: commit_num,
@@ -38,7 +47,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
       pulls: pulls,
       forks: fork_num,
       watchers: r.subscribers_count,
-      activity: time_ago_in_words(r.updated_at).capitalize
+      activity: last_commit_date
     })
   end
 end
