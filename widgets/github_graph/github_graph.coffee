@@ -7,6 +7,7 @@ class Dashing.Graph extends Dashing.Widget
       points[points.length - 1].y
 
   ready: ->
+    
     container = $(@node).parent()
     # Gross hacks. Let's fix this.
     width = (Dashing.widget_base_dimensions[0] * container.data("sizex")) + Dashing.widget_margins[0] * 2 * (container.data("sizex") - 1)
@@ -32,6 +33,8 @@ class Dashing.Graph extends Dashing.Widget
     @graph.render()
 
   onData: (data) ->
+    console.log "[LOG] Github graph data received" + data
     if @graph
       @graph.series[0].data = data.points
       @graph.render()
+               
