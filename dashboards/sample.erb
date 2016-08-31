@@ -1,13 +1,9 @@
 <script type='text/javascript'>
  $(function() {
-   <script type='text/javascript'>
- $(function() {
-   Dashing.gridsterLayout('[{"col":3,"row":3,"size_x":2,"size_y":1},{"col":2,"row":2,"size_x":3,"size_y":1},{"col":1,"row":4,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1}]')
+   Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":3,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":6,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":2,"size_y":1},{"col":4,"row":2,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":1,"row":4,"size_x":1,"size_y":1},{"col":2,"row":4,"size_x":2,"size_y":1}]')
  });
  </script>
- });
- </script>
-<% content_for :title do %>My super sweet dashboard
+<% content_for :title do %>DevOps Dashboard - CCBCMS
     <% end %>
         <div class="gridster">
             <ul>
@@ -16,37 +12,37 @@
                     <div data-id="charlottechen1993/devops_dashboard" data-view="GithubStats" style="background-color: #c0ffd0"></div>
                 </li>
                 <!--  github_stats  -->
-                <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
-
+                <li data-row="1" data-col="2" data-sizex="3" data-sizey="1">
                     <div data-id="driabwb/devops-dashboard-Sample-Project" data-view="GithubStats" style="background-color: #c0ffd0"></div>
                 </li>
                 <!--  github_graph  -->
-                <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+                <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
                     <div data-id="github_graph" data-view="Graph" data-title="This is a github commit graph" style="background-color:#ff9618"></div>
                 </li>
-                <!--  github_graph  -->
-                <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-                    <div data-id="convergence" data-view="Graph" data-title="Jenkins builds per day"></div>
+                <!--  jenkins_graph  -->
+                <li data-row="2" data-col="2" data-sizex="2" data-sizey="1">
+                    <div data-id="barchart" data-view="BarChart" data-title="Bar Chart" data-moreinfo=""></div>
                 </li>
                 <!--  github_line  -->
-                <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+                <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
                     <div data-id="commits_line_chart" data-view="GoogleLine" data-title="Commits per Day"></div>
                 </li>
                 <!--  github_user  -->
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
                     <div data-id="github-user" data-view="GithubUser" data-title="Github Commit Per User" data-text="This is an experiment taken by Charlotte" data-commit_per_user="10" style="background-color:#35E1D1"></div>
                 </li>
                 <!--  github_status -->
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
                     <div data-id="github_status" data-view="GithubStatus" data-title="GitHub Status" style="background-color:#31E161"></div>
                 </li>
-
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
                     <div data-view="Countdown" data-title="Finish Dashboard!" data-end="02-sep-2016 14:00:00"></div>
                </li>
-               <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+               <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
                    <div data-view="Countdown" data-title="GoHomeTime!" data-end="31-aug-2016 17:00:00"></div>
               </li>
-              
+                <li data-row="5" data-col="2" data-sizex="2" data-sizey="1">
+                    <div data-id="column_chart" data-view="GoogleColumn"  data-title="Google Column Chart"></div>
+                </li>
             </ul>
         </div>
