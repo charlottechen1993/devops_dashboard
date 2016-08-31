@@ -1,0 +1,23 @@
+$background-color: #35E1D1;
+
+$title-color: #FFFFFF;
+$subtitle-color: #C0F5E5;
+
+.widget-text{
+    .title{
+        color: $title-color;
+    }
+    
+    .subtitle{
+        color: $title-color;
+        line-height: 20px;
+    }
+}
+
+.user-commit{
+    color: $subtitle-color;
+}
+
+#chart_div{
+    margin: 20px;
+}
