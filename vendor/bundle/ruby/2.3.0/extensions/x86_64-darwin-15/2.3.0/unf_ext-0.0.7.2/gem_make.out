@@ -1,16 +1,30 @@
+<<<<<<< Updated upstream
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160831-12485-zemqfy.rb extconf.rb
+=======
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20160831-23503-1jou99u.rb extconf.rb
+>>>>>>> Stashed changes
 checking for main() in -lstdc++... yes
 creating Makefile
 
 To see why this extension failed to compile, please check the mkmf.log which can be found here:
 
+<<<<<<< Updated upstream
   /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/unf_ext-0.0.7.2/mkmf.log
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
 make "DESTDIR=" clean
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
+=======
+  /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/unf_ext-0.0.7.2/mkmf.log
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
+make "DESTDIR=" clean
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
+>>>>>>> Stashed changes
 make "DESTDIR="
 compiling unf.cc
 In file included from unf.cc:1:
@@ -37,6 +51,12 @@ In file included from unf.cc:1:
 5 warnings generated.
 linking shared-object unf_ext.bundle
 
+<<<<<<< Updated upstream
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20160831-12485-fm4h7b
+=======
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/unf_ext-0.0.7.2/ext/unf_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20160831-23503-7cd5dh
+>>>>>>> Stashed changes

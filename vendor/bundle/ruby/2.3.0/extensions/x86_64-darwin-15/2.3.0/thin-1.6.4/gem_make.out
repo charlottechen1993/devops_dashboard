@@ -1,16 +1,30 @@
+<<<<<<< Updated upstream
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160831-12485-d56071.rb extconf.rb
+=======
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20160831-23503-aootj7.rb extconf.rb
+>>>>>>> Stashed changes
 checking for main() in -lc... yes
 creating Makefile
 
 To see why this extension failed to compile, please check the mkmf.log which can be found here:
 
+<<<<<<< Updated upstream
   /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/thin-1.6.4/mkmf.log
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
 make "DESTDIR=" clean
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+=======
+  /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/thin-1.6.4/mkmf.log
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR=" clean
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+>>>>>>> Stashed changes
 make "DESTDIR="
 compiling parser.c
 parser.c:31:18: warning: unused variable 'http_parser_en_main' [-Wunused-const-variable]
@@ -36,6 +50,12 @@ thin.c:338:8: warning: implicit declaration of function 'thin_http_parser_has_er
 5 warnings generated.
 linking shared-object thin_parser.bundle
 
+<<<<<<< Updated upstream
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 thin_parser.bundle ./.gem.20160831-12485-i3f2hg
+=======
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 thin_parser.bundle ./.gem.20160831-23503-wayufh
+>>>>>>> Stashed changes

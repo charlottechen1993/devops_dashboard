@@ -13,6 +13,7 @@ NULLCMD = :
 
 srcdir = .
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 topdir = /usr/include/ruby-2.3.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/include/x86_64-linux-gnu/ruby-2.3.0
@@ -28,6 +29,14 @@ arch_hdrdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x8
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/Users/condesscorrell/.rvm/rubies/ruby-2.3.0
+=======
+topdir = /usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0
+hdrdir = $(topdir)
+arch_hdrdir = /usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/x86_64-darwin15
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/usr/local/Cellar/ruby/2.3.1
+>>>>>>> Stashed changes
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 >>>>>>> Stashed changes
@@ -41,6 +50,7 @@ sitehdrdir = $(rubyhdrdir)/site_ruby
 rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
+<<<<<<< Updated upstream
 vendordir = $(rubylibprefix)/vendor_ruby
 <<<<<<< Updated upstream
 sitearchdir = $(DESTDIR)./.gem.20160831-8803-x3d5pq
@@ -51,6 +61,12 @@ rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 sitearchdir = $(DESTDIR)./.gem.20160831-12485-nqt0pq
 sitelibdir = $(DESTDIR)./.gem.20160831-12485-nqt0pq
 sitedir = $(rubylibprefix)/site_ruby
+=======
+vendordir = $(DESTDIR)/usr/local/lib/ruby/vendor_ruby
+sitearchdir = $(DESTDIR)./.gem.20160831-23503-u1sm92
+sitelibdir = $(DESTDIR)./.gem.20160831-23503-u1sm92
+sitedir = $(DESTDIR)/usr/local/lib/ruby/site_ruby
+>>>>>>> Stashed changes
 rubyarchdir = $(rubylibdir)/$(arch)
 >>>>>>> Stashed changes
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -70,8 +86,12 @@ infodir = $(prefix)/share/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
 oldincludedir = $(DESTDIR)/usr/include
 includedir = $(prefix)/include
+<<<<<<< Updated upstream
 runstatedir = $(localstatedir)/run
 localstatedir = $(DESTDIR)/var
+=======
+localstatedir = $(prefix)/var
+>>>>>>> Stashed changes
 sharedstatedir = $(prefix)/com
 sysconfdir = $(DESTDIR)/etc
 datadir = $(datarootdir)
@@ -82,8 +102,8 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
-CC = gcc
-CXX = g++
+CC = clang
+CXX = clang++
 LIBRUBY = $(LIBRUBY_SO)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
 LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
@@ -97,6 +117,7 @@ cflags   =  $(optflags) $(debugflags) $(warnflags)
 cxxflags =  $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
+<<<<<<< Updated upstream
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wno-maybe-uninitialized
 CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC  $(ARCH_FLAG)
@@ -106,6 +127,17 @@ CPPFLAGS = -DHAVE_OPENSSL_SSL_H -DHAVE_OPENSSL_ERR_H -DWITH_SSL -DBUILD_FOR_RUBY
 CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security  $(ARCH_FLAG)
 ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic 
 dldflags =  
+=======
+warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens
+CCDLFLAGS = -fno-common
+CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe $(ARCH_FLAG)
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+DEFS     = 
+CPPFLAGS = -DHAVE_OPENSSL_SSL_H -DHAVE_OPENSSL_ERR_H -DWITH_SSL -DBUILD_FOR_RUBY -DHAVE_RB_THREAD_CALL_WITHOUT_GVL -DHAVE_RB_THREAD_FD_SELECT -DHAVE_TYPE_RB_FDSET_T -DHAVE_RB_WAIT_FOR_SINGLE_FD -DHAVE_RB_TIME_NEW -DHAVE_WRITEV -DOS_UNIX -DHAVE_SYS_EVENT_H -DHAVE_SYS_QUEUE_H -DHAVE_KQUEUE -DOS_DARWIN -DHAVE_MAKE_PAIR  -I/usr/local/opt/libyaml/include -I/usr/local/opt/openssl/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
+ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib
+dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib 
+>>>>>>> Stashed changes
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CXX) -shared
@@ -141,8 +173,13 @@ TOUCH = exit >
 
 preload = 
 
+<<<<<<< Updated upstream
 libpath = . $(archlibdir)
 LIBPATH =  -L. -L$(archlibdir)
+=======
+libpath = . $(libdir) /usr/local/opt/libyaml/lib /usr/local/opt/openssl/lib /usr/local/opt/readline/lib
+LIBPATH =  -L. -L$(libdir) -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib
+>>>>>>> Stashed changes
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -153,8 +190,13 @@ extout =
 extout_prefix = 
 target_prefix = 
 LOCAL_LIBS = 
+<<<<<<< Updated upstream
 LIBS = $(LIBRUBYARG_SHARED)  -lssl -lcrypto -lcrypto -lssl -lpthread -lgmp -ldl -lcrypt -lm   -lc
 ORIG_SRCS = rubymain.cpp pipe.cpp em.cpp page.cpp ed.cpp cmain.cpp binder.cpp kb.cpp ssl.cpp
+=======
+LIBS = $(LIBRUBYARG_SHARED)  -lcrypto -lssl -lpthread -ldl -lobjc 
+ORIG_SRCS = binder.cpp cmain.cpp ed.cpp em.cpp kb.cpp page.cpp pipe.cpp rubymain.cpp ssl.cpp
+>>>>>>> Stashed changes
 SRCS = $(ORIG_SRCS) 
 OBJS = binder.o cmain.o ed.o em.o kb.o page.o pipe.o rubymain.o ssl.o
 HDRS = $(srcdir)/project.h $(srcdir)/eventmachine.h $(srcdir)/page.h $(srcdir)/binder.h $(srcdir)/ssl.h $(srcdir)/em.h $(srcdir)/ed.h

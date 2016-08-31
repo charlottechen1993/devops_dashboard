@@ -13,6 +13,7 @@ NULLCMD = :
 
 srcdir = .
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 topdir = /usr/include/ruby-2.3.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/include/x86_64-linux-gnu/ruby-2.3.0
@@ -28,6 +29,14 @@ arch_hdrdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x8
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/Users/condesscorrell/.rvm/rubies/ruby-2.3.0
+=======
+topdir = /usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0
+hdrdir = $(topdir)
+arch_hdrdir = /usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/x86_64-darwin15
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/usr/local/Cellar/ruby/2.3.1
+>>>>>>> Stashed changes
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 >>>>>>> Stashed changes
@@ -41,6 +50,7 @@ sitehdrdir = $(rubyhdrdir)/site_ruby
 rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
+<<<<<<< Updated upstream
 vendordir = $(rubylibprefix)/vendor_ruby
 <<<<<<< Updated upstream
 sitearchdir = $(DESTDIR)./.gem.20160831-8803-134rho5
@@ -51,6 +61,12 @@ rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 sitearchdir = $(DESTDIR)./.gem.20160831-12485-1cc3gp2
 sitelibdir = $(DESTDIR)./.gem.20160831-12485-1cc3gp2
 sitedir = $(rubylibprefix)/site_ruby
+=======
+vendordir = $(DESTDIR)/usr/local/lib/ruby/vendor_ruby
+sitearchdir = $(DESTDIR)./.gem.20160831-23503-adands
+sitelibdir = $(DESTDIR)./.gem.20160831-23503-adands
+sitedir = $(DESTDIR)/usr/local/lib/ruby/site_ruby
+>>>>>>> Stashed changes
 rubyarchdir = $(rubylibdir)/$(arch)
 >>>>>>> Stashed changes
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -70,8 +86,12 @@ infodir = $(prefix)/share/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
 oldincludedir = $(DESTDIR)/usr/include
 includedir = $(prefix)/include
+<<<<<<< Updated upstream
 runstatedir = $(localstatedir)/run
 localstatedir = $(DESTDIR)/var
+=======
+localstatedir = $(prefix)/var
+>>>>>>> Stashed changes
 sharedstatedir = $(prefix)/com
 sysconfdir = $(DESTDIR)/etc
 datadir = $(datarootdir)
@@ -82,8 +102,8 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
-CC = gcc
-CXX = g++
+CC = clang
+CXX = clang++
 LIBRUBY = $(LIBRUBY_SO)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
 LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
@@ -97,6 +117,7 @@ cflags   =  $(optflags) $(debugflags) $(warnflags)
 cxxflags =  $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
+<<<<<<< Updated upstream
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wno-maybe-uninitialized
 CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
@@ -112,6 +133,17 @@ CPPFLAGS = -DHAVE_ICONV_H -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAV
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
 ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib
 dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib 
+>>>>>>> Stashed changes
+=======
+warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens
+CCDLFLAGS = -fno-common
+CFLAGS   = $(CCDLFLAGS) $(cflags)  -fno-common -pipe  -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+DEFS     = 
+CPPFLAGS = -DHAVE_ICONV_H -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29/include -I/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4/include/libxml2 -I/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4/include/libxml2  -I/usr/local/opt/libyaml/include -I/usr/local/opt/openssl/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
+ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib
+dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib 
 >>>>>>> Stashed changes
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
@@ -149,11 +181,16 @@ TOUCH = exit >
 preload = 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 libpath = . $(archlibdir) /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
 LIBPATH =  -L. -L$(archlibdir) -L/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib -L/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
 =======
 libpath = . $(libdir) /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib /usr/local/opt/libyaml/lib /usr/local/opt/readline/lib /usr/local/opt/libksba/lib /usr/local/opt/openssl/lib
 LIBPATH =  -L. -L$(libdir) -L/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib -L/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib
+>>>>>>> Stashed changes
+=======
+libpath = . $(libdir) /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4/lib /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29/lib /usr/local/opt/libyaml/lib /usr/local/opt/openssl/lib /usr/local/opt/readline/lib
+LIBPATH =  -L. -L$(libdir) -L/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4/lib -L/Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib
 >>>>>>> Stashed changes
 DEFFILE = 
 
@@ -166,10 +203,14 @@ extout_prefix =
 target_prefix = /nokogiri
 LOCAL_LIBS = 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 LIBS = $(LIBRUBYARG_SHARED) /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libexslt.a -lm -ldl -lz /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libxslt.a -ldl -lm -lz /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a -lpthread -lgmp -ldl -lcrypt -lm   -lc 
 ORIG_SRCS = xml_attr.c xml_element_content.c xml_sax_parser.c xml_document.c xml_comment.c xml_entity_decl.c html_sax_parser_context.c html_entity_lookup.c xml_node.c html_document.c xml_sax_parser_context.c xml_schema.c nokogiri.c xml_reader.c xml_entity_reference.c xml_io.c xml_encoding_handler.c xml_text.c xml_dtd.c xml_cdata.c html_element_description.c xml_namespace.c xml_sax_push_parser.c xml_processing_instruction.c xml_document_fragment.c xml_libxml2_hacks.c xml_element_decl.c xslt_stylesheet.c xml_relax_ng.c html_sax_push_parser.c xml_xpath_context.c xml_syntax_error.c xml_attribute_decl.c xml_node_set.c
 =======
 LIBS = $(LIBRUBYARG_SHARED) /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib/libexslt.a -lm -liconv -lpthread -lz /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib/libxml2.a /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib/libxslt.a -lm -liconv -lpthread -lz /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib/libxml2.a -llzma -lpthread -ldl -lobjc  
+=======
+LIBS = $(LIBRUBYARG_SHARED) /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29/lib/libexslt.a -lm -liconv -lpthread -lz /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4/lib/libxml2.a /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29/lib/libxslt.a -lm -liconv -lpthread -lz /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4/lib/libxml2.a -llzma -lpthread -ldl -lobjc  
+>>>>>>> Stashed changes
 ORIG_SRCS = html_document.c html_element_description.c html_entity_lookup.c html_sax_parser_context.c html_sax_push_parser.c nokogiri.c xml_attr.c xml_attribute_decl.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_element_content.c xml_element_decl.c xml_encoding_handler.c xml_entity_decl.c xml_entity_reference.c xml_io.c xml_libxml2_hacks.c xml_namespace.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_relax_ng.c xml_sax_parser.c xml_sax_parser_context.c xml_sax_push_parser.c xml_schema.c xml_syntax_error.c xml_text.c xml_xpath_context.c xslt_stylesheet.c
 >>>>>>> Stashed changes
 SRCS = $(ORIG_SRCS) 

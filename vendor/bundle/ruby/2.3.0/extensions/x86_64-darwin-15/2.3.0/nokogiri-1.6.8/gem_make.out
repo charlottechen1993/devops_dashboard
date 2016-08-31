@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/bin/ruby -r ./siteconf20160831-12485-1bnqdfx.rb extconf.rb
+=======
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20160831-23503-1jn7pm3.rb extconf.rb
+>>>>>>> Stashed changes
 Using pkg-config version 1.1.7
 checking if the C compiler accepts ... yes
 checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
@@ -30,11 +35,15 @@ If you are using Bundler, tell it to use the option:
 Note, however, that nokogiri is not fully compatible with arbitrary
 versions of libxml2 provided by OS/package vendors.
 ************************************************************************
-Extracting libxml2-2.9.4.tar.gz into tmp/x86_64-apple-darwin15.6.0/ports/libxml2/2.9.4... OK
+Extracting libxml2-2.9.4.tar.gz into tmp/x86_64-apple-darwin15.4.0/ports/libxml2/2.9.4... OK
 Running 'configure' for libxml2 2.9.4... OK
 Running 'compile' for libxml2 2.9.4... OK
 Running 'install' for libxml2 2.9.4... OK
+<<<<<<< Updated upstream
 Activating libxml2 2.9.4 (from /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4)...
+=======
+Activating libxml2 2.9.4 (from /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxml2/2.9.4)...
+>>>>>>> Stashed changes
 ************************************************************************
 IMPORTANT NOTICE:
 
@@ -54,11 +63,15 @@ If you are using Bundler, tell it to use the option:
     bundle config build.nokogiri --use-system-libraries
     bundle install
 ************************************************************************
-Extracting libxslt-1.1.29.tar.gz into tmp/x86_64-apple-darwin15.6.0/ports/libxslt/1.1.29... OK
+Extracting libxslt-1.1.29.tar.gz into tmp/x86_64-apple-darwin15.4.0/ports/libxslt/1.1.29... OK
 Running 'configure' for libxslt 1.1.29... OK
 Running 'compile' for libxslt 1.1.29... OK
 Running 'install' for libxslt 1.1.29... OK
+<<<<<<< Updated upstream
 Activating libxslt 1.1.29 (from /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29)...
+=======
+Activating libxslt 1.1.29 (from /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.4.0/libxslt/1.1.29)...
+>>>>>>> Stashed changes
 checking for main() in -llzma... yes
 checking for xmlParseDoc() in libxml/parser.h... yes
 checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
@@ -74,19 +87,24 @@ creating Makefile
 
 To see why this extension failed to compile, please check the mkmf.log which can be found here:
 
+<<<<<<< Updated upstream
   /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/nokogiri-1.6.8/mkmf.log
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
 make "DESTDIR=" clean
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
+=======
+  /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-15/2.3.0/nokogiri-1.6.8/mkmf.log
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
+make "DESTDIR=" clean
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
+>>>>>>> Stashed changes
 make "DESTDIR="
 compiling html_document.c
 compiling html_element_description.c
-html_element_description.c:252:48: warning: cast from 'const struct _htmlElemDesc *' to 'void *' drops const qualifier [-Wcast-qual]
-  return Data_Wrap_Struct(klass, 0, 0, (void *)description);
-                                               ^
-1 warning generated.
 compiling html_entity_lookup.c
 compiling html_sax_parser_context.c
 compiling html_sax_push_parser.c
@@ -96,13 +114,6 @@ compiling xml_attribute_decl.c
 compiling xml_cdata.c
 compiling xml_comment.c
 compiling xml_document.c
-xml_document.c:182:21: warning: cast from 'const unsigned char *' to 'char *' drops const qualifier [-Wcast-qual]
-      free((char *) doc->encoding); /* this may produce a gcc cast warning */
-                    ^
-xml_document.c:535:26: warning: cast from 'const char *' to 'unsigned char *' drops const qualifier [-Wcast-qual]
-      ns[i] = (xmlChar*) ptr;
-                         ^
-2 warnings generated.
 compiling xml_document_fragment.c
 compiling xml_dtd.c
 compiling xml_element_content.c
@@ -113,19 +124,13 @@ compiling xml_entity_reference.c
 compiling xml_io.c
 compiling xml_libxml2_hacks.c
 compiling xml_namespace.c
-xml_namespace.c:17:24: warning: cast from 'const unsigned char *' to 'unsigned char *' drops const qualifier [-Wcast-qual]
-    xmlFree((xmlChar *)ns->href);
-                       ^
-xml_namespace.c:20:24: warning: cast from 'const unsigned char *' to 'unsigned char *' drops const qualifier [-Wcast-qual]
-    xmlFree((xmlChar *)ns->prefix);
-                       ^
 xml_namespace.c:67:49: warning: incompatible pointer types passing 'struct _xmlNs *' to parameter of type 'xmlNodePtr' (aka 'struct _xmlNode *') [-Wincompatible-pointer-types]
   return (node->next && ! Nokogiri_namespace_eh(node->next));
                                                 ^~~~~~~~~~
 xml_namespace.c:27:38: note: passing argument to parameter 'node' here
 int Nokogiri_namespace_eh(xmlNodePtr node)
                                      ^
-3 warnings generated.
+1 warning generated.
 compiling xml_node.c
 xml_node.c:170:15: warning: 14 enumeration values not handled in switch: 'XML_ATTRIBUTE_NODE', 'XML_ENTITY_NODE', 'XML_DOCUMENT_NODE'... [-Wswitch]
       switch (reparentee->type) {
@@ -155,28 +160,51 @@ compiling xslt_stylesheet.c
 xslt_stylesheet.c:217:21: warning: incompatible pointer to integer conversion passing 'void *' to parameter of type 'VALUE' (aka 'unsigned long') [-Wint-conversion]
     Data_Get_Struct(ctxt->style->_private, nokogiriXsltStylesheetTuple,
                     ^~~~~~~~~~~~~~~~~~~~~
+<<<<<<< Updated upstream
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/ruby.h:1198:41: note: expanded from macro 'Data_Get_Struct'
     ((sval) = (type*)rb_data_object_get(obj))
                                         ^~~
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/ruby.h:1390:26: note: passing argument to parameter 'obj' here
+=======
+/usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/ruby/ruby.h:1205:41: note: expanded from macro 'Data_Get_Struct'
+    ((sval) = (type*)rb_data_object_get(obj))
+                                        ^~~
+/usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/ruby/ruby.h:1397:26: note: passing argument to parameter 'obj' here
+>>>>>>> Stashed changes
 rb_data_object_get(VALUE obj)
                          ^
 xslt_stylesheet.c:230:21: warning: incompatible pointer to integer conversion passing 'void *' to parameter of type 'VALUE' (aka 'unsigned long') [-Wint-conversion]
     Data_Get_Struct(ctxt->style->_private, nokogiriXsltStylesheetTuple,
                     ^~~~~~~~~~~~~~~~~~~~~
+<<<<<<< Updated upstream
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/ruby.h:1198:41: note: expanded from macro 'Data_Get_Struct'
     ((sval) = (type*)rb_data_object_get(obj))
                                         ^~~
 /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/ruby/ruby.h:1390:26: note: passing argument to parameter 'obj' here
+=======
+/usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/ruby/ruby.h:1205:41: note: expanded from macro 'Data_Get_Struct'
+    ((sval) = (type*)rb_data_object_get(obj))
+                                        ^~~
+/usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/ruby/ruby.h:1397:26: note: passing argument to parameter 'obj' here
+>>>>>>> Stashed changes
 rb_data_object_get(VALUE obj)
                          ^
 2 warnings generated.
 linking shared-object nokogiri/nokogiri.bundle
 Using pkg-config version 1.1.7
 Cleaning files only used during build.
+<<<<<<< Updated upstream
 rm -rf /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri/tmp/x86_64-apple-darwin15.6.0/ports
 rm -rf /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports
 
 current directory: /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
 make "DESTDIR=" install
 /usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20160831-12485-1cc3gp2/nokogiri
+=======
+rm -rf /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri/tmp/x86_64-apple-darwin15.4.0/ports
+rm -rf /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports
+
+current directory: /Users/charlottechen/Documents/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ext/nokogiri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20160831-23503-adands/nokogiri
+>>>>>>> Stashed changes

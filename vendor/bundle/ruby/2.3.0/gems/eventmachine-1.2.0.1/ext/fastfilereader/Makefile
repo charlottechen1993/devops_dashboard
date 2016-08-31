@@ -13,6 +13,7 @@ NULLCMD = :
 
 srcdir = .
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 topdir = /usr/include/ruby-2.3.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/include/x86_64-linux-gnu/ruby-2.3.0
@@ -28,6 +29,14 @@ arch_hdrdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x8
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/Users/condesscorrell/.rvm/rubies/ruby-2.3.0
+=======
+topdir = /usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0
+hdrdir = $(topdir)
+arch_hdrdir = /usr/local/Cellar/ruby/2.3.1/include/ruby-2.3.0/x86_64-darwin15
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/usr/local/Cellar/ruby/2.3.1
+>>>>>>> Stashed changes
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 >>>>>>> Stashed changes
@@ -41,6 +50,7 @@ sitehdrdir = $(rubyhdrdir)/site_ruby
 rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
+<<<<<<< Updated upstream
 vendordir = $(rubylibprefix)/vendor_ruby
 <<<<<<< Updated upstream
 sitearchdir = $(DESTDIR)./.gem.20160831-8803-11ls311
@@ -51,6 +61,12 @@ rubyarchdir = $(rubyarchprefix)/$(ruby_version)
 sitearchdir = $(DESTDIR)./.gem.20160831-12485-ioaobr
 sitelibdir = $(DESTDIR)./.gem.20160831-12485-ioaobr
 sitedir = $(rubylibprefix)/site_ruby
+=======
+vendordir = $(DESTDIR)/usr/local/lib/ruby/vendor_ruby
+sitearchdir = $(DESTDIR)./.gem.20160831-23503-1xbsro7
+sitelibdir = $(DESTDIR)./.gem.20160831-23503-1xbsro7
+sitedir = $(DESTDIR)/usr/local/lib/ruby/site_ruby
+>>>>>>> Stashed changes
 rubyarchdir = $(rubylibdir)/$(arch)
 >>>>>>> Stashed changes
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -70,8 +86,12 @@ infodir = $(prefix)/share/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
 oldincludedir = $(DESTDIR)/usr/include
 includedir = $(prefix)/include
+<<<<<<< Updated upstream
 runstatedir = $(localstatedir)/run
 localstatedir = $(DESTDIR)/var
+=======
+localstatedir = $(prefix)/var
+>>>>>>> Stashed changes
 sharedstatedir = $(prefix)/com
 sysconfdir = $(DESTDIR)/etc
 datadir = $(datarootdir)
@@ -82,8 +102,8 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
-CC = gcc
-CXX = g++
+CC = clang
+CXX = clang++
 LIBRUBY = $(LIBRUBY_SO)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
 LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
@@ -102,10 +122,17 @@ CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
+<<<<<<< Updated upstream
 CPPFLAGS = -DBUILD_FOR_RUBY -DOS_UNIX -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security $(ARCH_FLAG)
 ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags =  
+=======
+CPPFLAGS = -DBUILD_FOR_RUBY -DOS_UNIX  -I/usr/local/opt/libyaml/include -I/usr/local/opt/openssl/include -I/usr/local/opt/readline/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
+ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib
+dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib 
+>>>>>>> Stashed changes
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CXX) -shared
@@ -141,8 +168,13 @@ TOUCH = exit >
 
 preload = 
 
+<<<<<<< Updated upstream
 libpath = . $(archlibdir)
 LIBPATH =  -L. -L$(archlibdir)
+=======
+libpath = . $(libdir) /usr/local/opt/libyaml/lib /usr/local/opt/openssl/lib /usr/local/opt/readline/lib
+LIBPATH =  -L. -L$(libdir) -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib
+>>>>>>> Stashed changes
 DEFFILE = 
 
 CLEANFILES = mkmf.log

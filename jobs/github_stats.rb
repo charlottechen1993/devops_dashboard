@@ -28,7 +28,6 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     puts "Commit Number: #{fork_num}"
     
     # get last commit activity
-#    commit_history = r.github_status_message
     commit_array_history = Octokit.commits(name)
     last_commit_array = commit_array_history[0]
     last_commit_commit = last_commit_array[:commit]
