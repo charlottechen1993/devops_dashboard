@@ -1,8 +1,8 @@
 <script type='text/javascript'>
     $(function () {
-        Dashing.gridsterLayout('[{"col":3,"row":2,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1}]')
+        Dashing.gridsterLayout('[{"col":3,"row":3,"size_x":2,"size_y":1},{"col":2,"row":2,"size_x":3,"size_y":1},{"col":1,"row":4,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1},{"col":1,"row":2,"size_x":1,"size_y":1}]')
     });
-</script>
+</script>;
 <% content_for :title do %>My super sweet dashboard
     <% end %>
         <div class="gridster">
@@ -25,7 +25,7 @@
                 </li>
                 <!--  github_line  -->
                 <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-                    <div data-id="mychart" data-view="GoogleLine" data-title="My Chart"></div>
+                    <div data-id="commits_line_chart" data-view="GoogleLine" data-title="Commits per Day"></div>
                 </li>
                 <!--  github_user  -->
                 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -37,6 +37,9 @@
                 </li>
                 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
                     <div data-view="Countdown" data-title="Finish Dashboard!" data-end="02-sep-2016 14:00:00"></div>
+                </li>
+                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                    <div data-view="Countdown" data-title="GoHomeTime!" data-end="31-aug-2016 17:00:00"></div>
                 </li>
             </ul>
         </div>
