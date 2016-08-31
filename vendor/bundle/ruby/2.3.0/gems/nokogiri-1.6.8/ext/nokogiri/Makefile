@@ -12,6 +12,7 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
+<<<<<<< Updated upstream
 topdir = /usr/include/ruby-2.3.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/include/x86_64-linux-gnu/ruby-2.3.0
@@ -20,6 +21,16 @@ VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/usr
 rubysitearchprefix = $(sitearchlibdir)/$(RUBY_BASE_NAME)
 rubyarchprefix = $(archlibdir)/$(RUBY_BASE_NAME)
+=======
+topdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0
+hdrdir = $(topdir)
+arch_hdrdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x86_64-darwin15
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/Users/condesscorrell/.rvm/rubies/ruby-2.3.0
+rubysitearchprefix = $(rubylibprefix)/$(sitearch)
+rubyarchprefix = $(rubylibprefix)/$(arch)
+>>>>>>> Stashed changes
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
 exec_prefix = $(prefix)
 vendorarchhdrdir = $(sitearchincludedir)/$(RUBY_VERSION_NAME)/vendor_ruby
@@ -31,10 +42,17 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< Updated upstream
 sitearchdir = $(DESTDIR)./.gem.20160831-8803-134rho5
 sitelibdir = $(DESTDIR)./.gem.20160831-8803-134rho5
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
+=======
+sitearchdir = $(DESTDIR)./.gem.20160831-12485-1cc3gp2
+sitelibdir = $(DESTDIR)./.gem.20160831-12485-1cc3gp2
+sitedir = $(rubylibprefix)/site_ruby
+rubyarchdir = $(rubylibdir)/$(arch)
+>>>>>>> Stashed changes
 rubylibdir = $(rubylibprefix)/$(ruby_version)
 sitearchincludedir = $(includedir)/$(sitearch)
 archincludedir = $(includedir)/$(arch)
@@ -84,10 +102,17 @@ CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -DNOKOGIRI_USE_PACKAGED_LIBRARIES $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
+<<<<<<< Updated upstream
 CPPFLAGS = -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/include -I/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/include/libxml2 -I/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/include/libxml2 -Wdate-time -D_FORTIFY_SOURCE=2 $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
 CXXFLAGS = $(CCDLFLAGS) -g -O2 -fstack-protector-strong -Wformat -Werror=format-security $(ARCH_FLAG)
 ldflags  = -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags =  
+=======
+CPPFLAGS = -DHAVE_ICONV_H -DHAVE_XMLPARSEDOC -DHAVE_XSLTPARSESTYLESHEETDOC -DHAVE_EXSLTFUNCREGISTER -DHAVE_XMLHASFEATURE -DHAVE_XMLFIRSTELEMENTCHILD -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETPARSERSTRUCTUREDERRORS -DHAVE_XMLRELAXNGSETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETVALIDSTRUCTUREDERRORS -DHAVE_XMLSCHEMASETPARSERSTRUCTUREDERRORS -I/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/include -I/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/include/libxml2 -I/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/include/libxml2  -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) "-DNOKOGIRI_LIBXML2_PATH=\"/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4\"" "-DNOKOGIRI_LIBXML2_PATCHES=\"\"" "-DNOKOGIRI_LIBXSLT_PATH=\"/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29\"" "-DNOKOGIRI_LIBXSLT_PATCHES=\"\""
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
+ldflags  = -L. -fstack-protector -L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib
+dldflags = -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib 
+>>>>>>> Stashed changes
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -shared
@@ -123,8 +148,13 @@ TOUCH = exit >
 
 preload = 
 
+<<<<<<< Updated upstream
 libpath = . $(archlibdir) /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
 LIBPATH =  -L. -L$(archlibdir) -L/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib -L/home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib
+=======
+libpath = . $(libdir) /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib /usr/local/opt/libyaml/lib /usr/local/opt/readline/lib /usr/local/opt/libksba/lib /usr/local/opt/openssl/lib
+LIBPATH =  -L. -L$(libdir) -L/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib -L/Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib
+>>>>>>> Stashed changes
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -135,8 +165,13 @@ extout =
 extout_prefix = 
 target_prefix = /nokogiri
 LOCAL_LIBS = 
+<<<<<<< Updated upstream
 LIBS = $(LIBRUBYARG_SHARED) /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libexslt.a -lm -ldl -lz /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxslt/1.1.29/lib/libxslt.a -ldl -lm -lz /home/robert/Code/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-pc-linux-gnu/libxml2/2.9.4/lib/libxml2.a -lpthread -lgmp -ldl -lcrypt -lm   -lc 
 ORIG_SRCS = xml_attr.c xml_element_content.c xml_sax_parser.c xml_document.c xml_comment.c xml_entity_decl.c html_sax_parser_context.c html_entity_lookup.c xml_node.c html_document.c xml_sax_parser_context.c xml_schema.c nokogiri.c xml_reader.c xml_entity_reference.c xml_io.c xml_encoding_handler.c xml_text.c xml_dtd.c xml_cdata.c html_element_description.c xml_namespace.c xml_sax_push_parser.c xml_processing_instruction.c xml_document_fragment.c xml_libxml2_hacks.c xml_element_decl.c xslt_stylesheet.c xml_relax_ng.c html_sax_push_parser.c xml_xpath_context.c xml_syntax_error.c xml_attribute_decl.c xml_node_set.c
+=======
+LIBS = $(LIBRUBYARG_SHARED) /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib/libexslt.a -lm -liconv -lpthread -lz /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib/libxml2.a /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxslt/1.1.29/lib/libxslt.a -lm -liconv -lpthread -lz /Users/condesscorrell/Desktop/devops_dashboard/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.6.8/ports/x86_64-apple-darwin15.6.0/libxml2/2.9.4/lib/libxml2.a -llzma -lpthread -ldl -lobjc  
+ORIG_SRCS = html_document.c html_element_description.c html_entity_lookup.c html_sax_parser_context.c html_sax_push_parser.c nokogiri.c xml_attr.c xml_attribute_decl.c xml_cdata.c xml_comment.c xml_document.c xml_document_fragment.c xml_dtd.c xml_element_content.c xml_element_decl.c xml_encoding_handler.c xml_entity_decl.c xml_entity_reference.c xml_io.c xml_libxml2_hacks.c xml_namespace.c xml_node.c xml_node_set.c xml_processing_instruction.c xml_reader.c xml_relax_ng.c xml_sax_parser.c xml_sax_parser_context.c xml_sax_push_parser.c xml_schema.c xml_syntax_error.c xml_text.c xml_xpath_context.c xslt_stylesheet.c
+>>>>>>> Stashed changes
 SRCS = $(ORIG_SRCS) 
 OBJS = html_document.o html_element_description.o html_entity_lookup.o html_sax_parser_context.o html_sax_push_parser.o nokogiri.o xml_attr.o xml_attribute_decl.o xml_cdata.o xml_comment.o xml_document.o xml_document_fragment.o xml_dtd.o xml_element_content.o xml_element_decl.o xml_encoding_handler.o xml_entity_decl.o xml_entity_reference.o xml_io.o xml_libxml2_hacks.o xml_namespace.o xml_node.o xml_node_set.o xml_processing_instruction.o xml_reader.o xml_relax_ng.o xml_sax_parser.o xml_sax_parser_context.o xml_sax_push_parser.o xml_schema.o xml_syntax_error.o xml_text.o xml_xpath_context.o xslt_stylesheet.o
 HDRS = $(srcdir)/html_element_description.h $(srcdir)/html_sax_parser_context.h $(srcdir)/xml_encoding_handler.h $(srcdir)/xml_namespace.h $(srcdir)/xml_document.h $(srcdir)/xml_attr.h $(srcdir)/xml_schema.h $(srcdir)/xml_attribute_decl.h $(srcdir)/nokogiri.h $(srcdir)/xslt_stylesheet.h $(srcdir)/xml_io.h $(srcdir)/xml_document_fragment.h $(srcdir)/xml_element_content.h $(srcdir)/xml_entity_reference.h $(srcdir)/xml_relax_ng.h $(srcdir)/xml_comment.h $(srcdir)/xml_processing_instruction.h $(srcdir)/xml_dtd.h $(srcdir)/html_sax_push_parser.h $(srcdir)/xml_node.h $(srcdir)/html_entity_lookup.h $(srcdir)/xml_xpath_context.h $(srcdir)/xml_cdata.h $(srcdir)/xml_syntax_error.h $(srcdir)/xml_element_decl.h $(srcdir)/xml_libxml2_hacks.h $(srcdir)/xml_sax_parser_context.h $(srcdir)/xml_text.h $(srcdir)/xml_reader.h $(srcdir)/html_document.h $(srcdir)/xml_node_set.h $(srcdir)/xml_sax_parser.h $(srcdir)/xml_sax_push_parser.h $(srcdir)/xml_entity_decl.h

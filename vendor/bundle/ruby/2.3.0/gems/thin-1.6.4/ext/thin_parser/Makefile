@@ -12,6 +12,7 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
+<<<<<<< Updated upstream
 topdir = /usr/include/ruby-2.3.0
 hdrdir = $(topdir)
 arch_hdrdir = /usr/include/x86_64-linux-gnu/ruby-2.3.0
@@ -20,6 +21,16 @@ VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/usr
 rubysitearchprefix = $(sitearchlibdir)/$(RUBY_BASE_NAME)
 rubyarchprefix = $(archlibdir)/$(RUBY_BASE_NAME)
+=======
+topdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0
+hdrdir = $(topdir)
+arch_hdrdir = /Users/condesscorrell/.rvm/rubies/ruby-2.3.0/include/ruby-2.3.0/x86_64-darwin15
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/Users/condesscorrell/.rvm/rubies/ruby-2.3.0
+rubysitearchprefix = $(rubylibprefix)/$(sitearch)
+rubyarchprefix = $(rubylibprefix)/$(arch)
+>>>>>>> Stashed changes
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
 exec_prefix = $(prefix)
 vendorarchhdrdir = $(sitearchincludedir)/$(RUBY_VERSION_NAME)/vendor_ruby
@@ -31,10 +42,17 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(rubysitearchprefix)/vendor_ruby/$(ruby_version)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< Updated upstream
 sitearchdir = $(DESTDIR)./.gem.20160831-8803-1sdkqgy
 sitelibdir = $(DESTDIR)./.gem.20160831-8803-1sdkqgy
 sitedir = $(DESTDIR)/usr/local/lib/site_ruby
 rubyarchdir = $(rubyarchprefix)/$(ruby_version)
+=======
+sitearchdir = $(DESTDIR)./.gem.20160831-12485-i3f2hg
+sitelibdir = $(DESTDIR)./.gem.20160831-12485-i3f2hg
+sitedir = $(rubylibprefix)/site_ruby
+rubyarchdir = $(rubylibdir)/$(arch)
+>>>>>>> Stashed changes
 rubylibdir = $(rubylibprefix)/$(ruby_version)
 sitearchincludedir = $(includedir)/$(sitearch)
 archincludedir = $(includedir)/$(arch)
