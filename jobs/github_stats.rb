@@ -31,7 +31,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     last_commit_commit = last_commit_array[:commit]
     last_commit_committer = last_commit_commit[:committer]
     last_commit_date = last_commit_committer[:date]
-    
+        
     # get number of contributors
     contri_stat = Octokit.contributors_stats(name)
     contri_num = contri_stat[0][:total]
@@ -46,7 +46,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
         contri_commits = ind_contributors[$i][:contributions]
 #        puts "Participation: #{contri_name} => #{contri_commits}"
         $i += 1
-        
+
         contri_hash[$i] = {:contri_name => contri_commits}
     end
     
