@@ -1,8 +1,8 @@
 <script type='text/javascript'>
- $(function() {
-   Dashing.gridsterLayout('[{"col":3,"row":2,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1}]')
- });
- </script>
+    $(function () {
+        Dashing.gridsterLayout('[{"col":3,"row":2,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":3,"row":1,"size_x":2,"size_y":1},{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":1,"size_y":1}]')
+    });
+</script>
 <% content_for :title do %>My super sweet dashboard
     <% end %>
         <div class="gridster">
@@ -13,16 +13,15 @@
                 </li>
                 <!--  github_stats  -->
                 <li data-row="1" data-col="1" data-sizex="3" data-sizey="1">
-
                     <div data-id="driabwb/devops-dashboard-Sample-Project" data-view="GithubStats" style="background-color: #c0ffd0"></div>
                 </li>
                 <!--  github_graph  -->
                 <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
                     <div data-id="github_graph" data-view="Graph" data-title="This is a github commit graph" style="background-color:#ff9618"></div>
                 </li>
-                <!--  github_graph  -->
-                <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-                    <div data-id="convergence" data-view="Graph" data-title="Jenkins builds per day"></div>
+                <!--  jenkins_graph  -->
+                <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+                    <div data-id="barchart" data-view="BarChart" data-title="Bar Chart" data-moreinfo=""></div>
                 </li>
                 <!--  github_line  -->
                 <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
@@ -36,9 +35,8 @@
                 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
                     <div data-id="github_status" data-view="GithubStatus" data-title="GitHub Status" style="background-color:#31E161"></div>
                 </li>
-
                 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
                     <div data-view="Countdown" data-title="Finish Dashboard!" data-end="02-sep-2016 14:00:00"></div>
-               </li>
+                </li>
             </ul>
         </div>
