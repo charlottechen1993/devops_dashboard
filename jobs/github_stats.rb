@@ -16,8 +16,10 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     r = Octokit::Client.new.repository(name)
     pulls = Octokit.pulls(name, :state => 'open').count
     #commits = Octokit.; #Octokit.commits_since(name,'2016-08-30')
-
-    puts name
+    
+      puts name
+#      puts "Commit Message: {r.commit_activity_stats(name)}"
+    
       
     send_event(name, {
       commits: r.commits_since("2016-08-30"),
