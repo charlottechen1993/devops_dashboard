@@ -18,7 +18,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     #commits = Octokit.; #Octokit.commits_since(name,'2016-08-30')
     
       puts name
-#      puts "Commit Message: {r.commit_activity_stats(name)}"
+      puts "Commit Message: {r.commit_activity_stats(name)}"
     
       
     send_event(name, {
