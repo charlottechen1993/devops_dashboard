@@ -1,32 +1,29 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #ec663c;
-
-$title-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$background-color:  #dc5945;
 
 // ----------------------------------------------------------------------------
-// Widget-text styles
+// Widget-clock styles
 // ----------------------------------------------------------------------------
-.widget-text {
+.widget-countdown {
 
   background-color: $background-color;
 
-  .title {
-    color: $title-color;
+  h3 { font-size: 2em;}
+
+  h2 { font-size: 2em;}
+
+  .countdown-time {
+    margin-top: 10px;
+    color: gold;
   }
 
-  .more-info {
-    color: $moreinfo-color;
-  }
-
-  .updated-at {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-
-  &.large h3 {
-    font-size: 65px;
+  .before-more-info {
+    font-size: 15px;
+    position: absolute;
+    bottom: 52px;
+    left: 0;
+    right: 0;
   }
 }

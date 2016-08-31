@@ -46,4 +46,3 @@ class Dashing.GoogleLine extends Dashing.Widget
     if @chart
       @data = google.visualization.arrayToDataTable data.points
       @chart.draw @data, @options
-      
