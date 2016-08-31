@@ -12,21 +12,31 @@ end
 
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
-  config["repos"].each do |name|
+    config["repos"].each do |name|
     r = Octokit::Client.new.repository(name)
     pulls = Octokit.pulls(name, :state => 'open').count
-    #commits = Octokit.; #Octokit.commits_since(name,'2016-08-30')
     
-      puts name
-      puts "Commit Message: {r.commit_activity_stats(name)}"
+    # get number of commits per repo
+    puts name
+    commit_array = Octokit.commits_since(name,'2016-08-30')
+    commit_num = commit_array.length
+    puts "Commit Number: #{commit_num}"
     
-      
+    # get number of forks per repo
+    fork_array =  Octokit.forks(name)
+    fork_num = fork_array.length
+    puts "Commit Number: #{fork_num}"
+    
+    # get last commit activity
+    commit_history = Octokit.commit_activity_stats(name)    
+    puts "Commit History: #{commit_history}"
+        
     send_event(name, {
-      commits: r.commits_since("2016-08-30"),
+      commits: commit_num,
       repo: name,
       issues: r.open_issues_count - pulls,
       pulls: pulls,
-      forks: r.forks,
+      forks: fork_num,
       watchers: r.subscribers_count,
       activity: time_ago_in_words(r.updated_at).capitalize
     })
