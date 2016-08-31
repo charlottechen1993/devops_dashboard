@@ -15,10 +15,10 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
   config["repos"].each do |name|
     r = Octokit::Client.new.repository(name)
     pulls = Octokit.pulls(name, :state => 'open').count
-    commits = 8 #Octokit.commits_since(name,'2016-08-30')
+    #commits = Octokit.; #Octokit.commits_since(name,'2016-08-30')
 
     send_event(name, {
-      commits: commits,
+      commits: r.commits_since("2016-08-30"),
       repo: name,
       issues: r.open_issues_count - pulls,
       pulls: pulls,
