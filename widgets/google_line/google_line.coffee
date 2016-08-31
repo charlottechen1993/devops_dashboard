@@ -21,6 +21,8 @@ class Dashing.GoogleLine extends Dashing.Widget
       height: height
       width: width
       colors: colors
+      hAxis:
+        title: 'Day'
       backgroundColor:
         fill:'transparent'
       legend:
@@ -29,7 +31,8 @@ class Dashing.GoogleLine extends Dashing.Widget
         duration: 500,
         easing: 'out'
       vAxis:
-       format: @get('vaxis_format')
+        format: '0'
+        title: '# Commits'
       curveType: @get('curve_type')
 
     if @get('points')
