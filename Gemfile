@@ -7,6 +7,7 @@ gem 'httparty'
 gem 'ruby-trello'
 gem 'nokogiri'
 gem 'htmlentities'
+gem 'jenkins_api_client'
 #gem 'dotenv'
 
 ## Remove this if you don't need a twitter widget.
