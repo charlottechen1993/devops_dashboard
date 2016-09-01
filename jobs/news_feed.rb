@@ -36,7 +36,7 @@ json.take(5).each do |x|
     # puts name
 
     commitObject = Hash.new
-    commitObject["label"] = name + " has pushed to the repo - "
+    commitObject["label"] = name
     commitObject["value"] = Time.parse(date)
 
     # puts commitObject
