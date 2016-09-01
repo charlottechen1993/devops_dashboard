@@ -5,9 +5,17 @@ require 'jenkins_api_client'
 # The following call will return all jobs matching 'Testjob'
 puts @client.job.list("^sample")
 # The following call lists all jobs
-puts " THIS IS A LIST OF ALL JOBS"
+puts "--------- ROBERT'S JENKINS API DEBUGGING PLAYGROUND --------"
+puts "List of all jobs in targeted jenkins account"
 puts @client.job.list_all
 
+
+
+
+
+
+
+puts "-------- /ROBERT'S JENKINS API DEBUGGING PLAYGROUND --------"
 
 
 

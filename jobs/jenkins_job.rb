@@ -46,6 +46,11 @@ job_mapping.each do |title, jenkins_project|
       current_status = "PREBUILD" if pre_build_info["building"]
       percent = get_completion_percentage(jenkins_project[:pre_job])
     end
+puts current_status
+puts last_status
+puts  timestampbuild_info["timestamp"]
+puts  value percent
+
 
     send_event(title, {
       currentResult: current_status,
