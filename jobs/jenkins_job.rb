@@ -1,8 +1,9 @@
 require 'net/http'
 require 'json'
 require 'time'
+#require 'dotenv'
 
-JENKINS_URI = URI.parse("http://54.172.252.112")
+JENKINS_URI = URI.parse("http://54.86.75.233")
 
 # the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 job_mapping = {
@@ -45,7 +46,7 @@ job_mapping.each do |title, jenkins_project|
       current_status = "PREBUILD" if pre_build_info["building"]
       percent = get_completion_percentage(jenkins_project[:pre_job])
     end
-    
+
     send_event(title, {
       currentResult: current_status,
       lastResult: last_status,
