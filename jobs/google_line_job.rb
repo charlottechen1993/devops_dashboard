@@ -11,7 +11,6 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
 #      ['2007',  1030,      540]
 #  ])
     
-    #response = Net::HTTP.get_response("https://api.github.com/repos/driabwb/devops-dashboard-sample-project/commits?access_token=5cf574c6b259d029d74430fa174936ee9801a9ae")
     response = HTTParty.get("https://api.github.com/repos/driabwb/devops-dashboard-sample-project/commits?access_token=5cf574c6b259d029d74430fa174936ee9801a9ae")
     
     json = JSON.parse(response.body)
@@ -40,7 +39,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     
     dayhash.each do |key, value|
         day_points.push([key, value])
-        #puts key + ' : ' + value.to_s
+        puts key + ' : ' + value.to_s
     end
     
     #puts(day_points)
