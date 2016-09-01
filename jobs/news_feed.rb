@@ -1,4 +1,6 @@
 require 'httparty'
+require 'date'
+require 'time'
 
 github_url = 'https://api.github.com/repos/'
 repo_owner = 'driabwb'
@@ -29,13 +31,15 @@ json.take(5).each do |x|
     date = x["commit"]["author"]["date"]
     comment = x["commit"]["message"]
 
-    puts name
+    # puts DateTime.strptime(date, '%m/%d/%Y %H:%M:%S')
+
+    # puts name
 
     commitObject = Hash.new
     commitObject["label"] = name + " has pushed to the repo - "
-    commitObject["value"] = date
+    commitObject["value"] = Time.parse(date)
 
-    puts commitObject
+    # puts commitObject
 
     data.push(commitObject)
 
