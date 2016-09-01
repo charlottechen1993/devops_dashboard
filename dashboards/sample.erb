@@ -1,11 +1,10 @@
 <!--Set initial page layout -->
 <script type='text/javascript'>
- $(function() {
-   Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":3,"size_y":1},{"col":3,"row":5,"size_x":2,"size_y":1},{"col":1,"row":4,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":3,"row":4,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1}]')
- });
- </script>
- <!--Import javascript files for widget goodness -->
-
+    $(function () {
+        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":3,"size_y":1},{"col":3,"row":5,"size_x":2,"size_y":1},{"col":1,"row":4,"size_x":2,"size_y":1},{"col":3,"row":3,"size_x":1,"size_y":1},{"col":3,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":1,"size_y":1},{"col":3,"row":4,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1}]')
+    });
+</script>
+<!--Import javascript files for widget goodness -->
 <% content_for :title do %>DevOps Dashboard - CCBCMS
     <% end %>
         <div class="gridster">
@@ -26,28 +25,30 @@
                 <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
                     <div data-id="commits_line_chart" data-view="GoogleLine" data-title="Commits per Day"></div>
                 </li>
-                <!--  github_user  -->
+                <!-- participation -->
                 <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
-                    <div data-id="github-user" data-view="GithubUser" data-title="Github Commit Per User" data-text="This is an experiment taken by Charlotte" data-commit_per_user="10" style="background-color:#35E1D1"></div>
+                    <div data-id="participation" data-view="List" data-title="Commits per Person" style="background-color:#9C2230"></div>
                 </li>
                 <!--  github_status -->
                 <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
                     <div data-id="github_status" data-view="GithubStatus" data-title="GitHub Status" style="background-color:#31E161"></div>
                 </li>
+                <!--  countdown -->
                 <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
-                    <div data-view="Countdown" data-title="Finish Dashboard!" data-end="02-sep-2016 14:00:00"></div>
-               </li>
-               <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
-                   <div data-view="Countdown" data-title="GoHomeTime!" data-end="31-aug-2016 17:00:00"></div>
-              </li>
+                    <div data-view="Countdown" data-title="Finish Dashboard!" data-end="06-sep-2016 14:00:00"></div>
+                </li>
+                <!--  countdown -->
+                <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
+                    <div data-view="Countdown" data-title="GoHomeTime!" data-end="1-sept-2016 16:00:00"></div>
+                </li>
                 <!-- jenkins column chart -->
                 <li data-row="5" data-col="2" data-sizex="2" data-sizey="1">
-                    <div data-id="column_chart" data-view="GoogleColumn"  data-title="Jenkins Build Chart"></div>
+                    <div data-id="column_chart" data-view="GoogleColumn" data-title="Jenkins Build Chart"></div>
                 </li>
+                <!-- news_feed -->
                 <li data-row="5" data-col="1" data-sizex="2" data-sizey="1">
                     <div data-id="news_feed" data-view="List" data-title="Last 5 GitHub Commits" style="background-color:#31E161"></div>
                 </li>
-
                 <!-- jenkins build widget -->
                 <!--
                 <li data-row="6" data-col="1" data-sizex="1" data-sizey="1">
@@ -61,8 +62,6 @@
                 <li data-row="5" data-col="1" data-sizex="2" data-sizey="1">
                     <div data-id="news_feed" data-view="List" data-title="Last 5 GitHub Commits" style="background-color:#31E161"></div>
                 </li>
-
                 -->
->>>>>>> e01fe4904de9470130634fd439cf404552059602
             </ul>
         </div>

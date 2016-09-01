@@ -14,5 +14,12 @@
   </li>
 </ul>
 
+<ul class="contributor_stat">
+    <li data-foreach-item="items">
+        <span class="label" data-bind="item.label"></span>
+        <span class="count" data-bind="item.value"></span>
+    </li>
+</ul>
+
 <p class="more-info" data-bind="moreinfo"></p>
 <!-- <p class="updated-at" data-bind="updatedAtMessage"></p> -->

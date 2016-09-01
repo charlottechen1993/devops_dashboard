@@ -37,7 +37,8 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     contri_num = contri_stat[0][:total]
         
     # get commit counts for each users
-    contri_hash = Hash.new
+    
+    contri_list = []
     ind_contributors = Octokit.contributors(name)
     $len = ind_contributors.length
     $i = 0
@@ -46,15 +47,18 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
         contri_commits = ind_contributors[$i][:contributions]
 #        puts "Participation: #{contri_name} => #{contri_commits}"
         $i += 1
-
-        contri_hash[$i] = {:contri_name => contri_commits}
-    end
-    
-    puts contri_hash
         
+        contri_hash = Hash.new
+        contri_hash["label"] = contri_name
+        contri_hash["value"] = contri_commits
+        
+        contri_list.push(contri_hash)
+    end
+        
+    puts contri_list
     # send contributor commit hashmap
-    send_event(name, {
-        contri_hash: contri_hash
+    send_event('participation', {
+        items: contri_list
     })
        
     # send github data
