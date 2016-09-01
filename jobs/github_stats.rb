@@ -45,7 +45,6 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     while $i < $len do
         contri_name = ind_contributors[$i][:login]
         contri_commits = ind_contributors[$i][:contributions]
-#        puts "Participation: #{contri_name} => #{contri_commits}"
         $i += 1
         
         contri_hash = Hash.new
@@ -55,11 +54,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
         contri_list.push(contri_hash)
     end
         
-    puts contri_list
-    # send contributor commit hashmap
-    send_event('participation', {
-        items: contri_list
-    })
+#    puts contri_list
        
     # send github data
     send_event(name, {
@@ -68,7 +63,8 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
         forks: fork_num,
         watchers: r.subscribers_count,
         activity: last_commit_date,
-        total_contributors: contri_num
+        total_contributors: contri_num,
+        items: contri_list
     })
     end
 end
