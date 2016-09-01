@@ -33,15 +33,17 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     last_commit_date = last_commit_committer[:date]
         
     # get number of contributors
-    contri_stat = Octokit.contributors_stats(name)
-    contri_num = contri_stat[0][:total]
+    contri_stat = Octokit.contributors(name)
+    contri_num = contri_stat.length
+    puts contri_num
         
     # get commit counts for each users
     
-    contri_list = []
+    
     ind_contributors = Octokit.contributors(name)
     $len = ind_contributors.length
     $i = 0
+    contri_list = Array.new
     while $i < $len do
         contri_name = ind_contributors[$i][:login]
         contri_commits = ind_contributors[$i][:contributions]
