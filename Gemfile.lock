@@ -37,7 +37,6 @@ GEM
       thor (> 0.18.1)
     domain_name (0.5.20160615)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.1.1)
     equalizer (0.0.10)
     erubis (2.7.0)
     eventmachine (1.2.0.1)
@@ -163,7 +162,6 @@ PLATFORMS
 DEPENDENCIES
   actionview
   dashing
-  dotenv
   htmlentities
   httparty
   jenkins_api_client
