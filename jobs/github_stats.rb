@@ -12,23 +12,59 @@ end
 
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
-  config["repos"].each do |name|
+    config["repos"].each do |name|
     r = Octokit::Client.new.repository(name)
     pulls = Octokit.pulls(name, :state => 'open').count
-    #commits = Octokit.; #Octokit.commits_since(name,'2016-08-30')
     
-      puts name
-      puts "Commit Message: {r.commit_activity_stats(name)}"
+    # get number of commits per repo
+    puts name
+    commit_array = Octokit.commits_since(name,'2016-08-30')
+    commit_num = commit_array.length
     
-      
+    # get number of forks per repo
+    fork_array =  Octokit.forks(name)
+    fork_num = fork_array.length
+    
+    # get last commit activity
+    commit_array_history = Octokit.commits(name)
+    last_commit_array = commit_array_history[0]
+    last_commit_commit = last_commit_array[:commit]
+    last_commit_committer = last_commit_commit[:committer]
+    last_commit_date = last_commit_committer[:date]
+        
+    # get number of contributors
+    contri_stat = Octokit.contributors_stats(name)
+    contri_num = contri_stat[0][:total]
+        
+    # get commit counts for each users
+    contri_hash = Hash.new
+    ind_contributors = Octokit.contributors(name)
+    $len = ind_contributors.length
+    $i = 0
+    while $i < $len do
+        contri_name = ind_contributors[$i][:login]
+        contri_commits = ind_contributors[$i][:contributions]
+#        puts "Participation: #{contri_name} => #{contri_commits}"
+        $i += 1
+
+        contri_hash[$i] = {:contri_name => contri_commits}
+    end
+    
+    puts contri_hash
+        
+    # send contributor commit hashmap
     send_event(name, {
-      commits: r.commits_since("2016-08-30"),
-      repo: name,
-      issues: r.open_issues_count - pulls,
-      pulls: pulls,
-      forks: r.forks,
-      watchers: r.subscribers_count,
-      activity: time_ago_in_words(r.updated_at).capitalize
+        contri_hash: contri_hash
     })
-  end
+       
+    # send github data
+    send_event(name, {
+        commits: commit_num,
+        repo: name,
+        forks: fork_num,
+        watchers: r.subscribers_count,
+        activity: last_commit_date,
+        total_contributors: contri_num
+    })
+    end
 end
