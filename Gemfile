@@ -10,6 +10,7 @@ gem 'htmlentities'
 gem 'jenkins_api_client'
 #gem 'dotenv'
 gem 'activesupport'
+gem 'jira-ruby', :require => 'jira'
 
 
 ## Remove this if you don't need a twitter widget.
