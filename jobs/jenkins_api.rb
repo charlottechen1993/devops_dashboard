@@ -39,14 +39,6 @@ ap @client.job.get_test_results(job_list[0],5)
 
 
 
-<<<<<<< HEAD
-
-puts "\n\n---=========== /ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
-=======
-puts "---=========== /ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
->>>>>>> f46af1d666fc7e9a1c0d3e43e1aa7c1ebdd2192c
-
-
 
 
 
