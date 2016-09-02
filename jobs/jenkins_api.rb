@@ -12,9 +12,17 @@ puts "List of all jobs in targeted jenkins account - with all details (JSON)"
 listallhash = @client.job.list_all_with_details
 puts listallhash
 puts "Test of color to status. This should be blue"
-# puts 
+puts 
 
-
+@client.job.get_build_details(jobname,buildnumber)
+get_builds(job_name, options = {}) ⇒ Object
+#get_config(job_name) ⇒ String
+#get_current_build_number(job_name) ⇒ Integer (also: #build_number)
+#get_current_build_status(job_name) ⇒ String (also: #status)
+#get_test_results(job_name, build_num) ⇒ Object
+#list_by_status(status, jobs = []) ⇒ Array<String>
+#list_details(job_name) ⇒ Hash
+#list_details(job_name) ⇒ Hash
 
 
 
