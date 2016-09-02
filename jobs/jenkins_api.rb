@@ -2,20 +2,23 @@ require 'jenkins_api_client'
 
 @client = JenkinsApi::Client.new(:server_ip => '54.86.75.233',
          :username => 'driabwb', :password => '7f5e30e07dca8adfcbd0ef47c78882b9')
-# The following call will return all jobs matching 'Testjob'
-puts @client.job.list("^sample")
-# The following call lists all jobs
-puts "---=========== ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
-puts "List of all jobs in targeted jenkins account"
-puts @client.job.list_all
-puts "List of all jobs in targeted jenkins account - with all details (JSON)"
-listallhash = @client.job.list_all_with_details
-puts listallhash
-puts "Test of color to status. This should be blue"
-puts 
 
-@client.job.get_build_details(jobname,buildnumber)
-get_builds(job_name, options = {}) ⇒ Object
+puts "---=========== ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
+
+puts "List of all jobs in targeted jenkins account"
+job_list = @client.job.list_all
+puts job_list
+
+puts "\nList of all jobs in targeted jenkins account - with all details (JSON)"
+listall_hash = @client.job.list_all_with_details
+puts listall_hash
+
+
+
+
+
+#@client.job.get_build_details(jobname,buildnumber)
+#get_builds(job_name, options = {}) ⇒ Object
 #get_config(job_name) ⇒ String
 #get_current_build_number(job_name) ⇒ Integer (also: #build_number)
 #get_current_build_status(job_name) ⇒ String (also: #status)
