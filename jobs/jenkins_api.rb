@@ -15,16 +15,15 @@ listall_hash = @client.job.list_all_with_details
 puts listall_hash
 
 puts "\nIterate through job_list and display get_builds for each one"
-build_deets = Array.new(job_list.length)
-test1 = @client.job.get_builds(job_list[0],{})
-test2 = @client.job.get_builds(job_list[1],{})
-puts test1
-puts test2
-#for i in 0..job_list.length
-#  build_deets.push(@client.job.get_builds(job_list[i],{}))
-#end
+puts "This will construct a 3d(ish) hash of all jobs and all build deets"
+
+build_deets = Hash.new #Instantiate hash table
+job_list.each{|i| build_deets[i]=@client.job.get_builds(i,{})}
+puts build_deets
 
 
+
+#ADDITIONAL FUNCTIONS TO TEST/IMPLEMENT
 #@client.job.get_build_details(jobname,buildnumber)
 #get_builds(job_name, options = {}) ⇒ Object
 #get_config(job_name) ⇒ String
