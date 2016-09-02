@@ -34,8 +34,6 @@ puts build_deets
 #list_details(job_name) ⇒ Hash
 #list_details(job_name) ⇒ Hash
 
->>>>>>> origin/master
-
 
 
 puts "---=========== /ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
