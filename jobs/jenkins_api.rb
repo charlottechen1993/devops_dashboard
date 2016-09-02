@@ -8,13 +8,21 @@ puts "---=========== ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
 puts "List of all jobs in targeted jenkins account"
 job_list = @client.job.list_all
 puts job_list
+puts "There are ["+job_list.length.to_s+"] total jobs for this account"
 
 puts "\nList of all jobs in targeted jenkins account - with all details (JSON)"
 listall_hash = @client.job.list_all_with_details
 puts listall_hash
 
-
-
+puts "\nIterate through job_list and display get_builds for each one"
+build_deets = Array.new(job_list.length)
+test1 = @client.job.get_builds(job_list[0],{})
+test2 = @client.job.get_builds(job_list[1],{})
+puts test1
+puts test2
+#for i in 0..job_list.length
+#  build_deets.push(@client.job.get_builds(job_list[i],{}))
+#end
 
 
 #@client.job.get_build_details(jobname,buildnumber)
