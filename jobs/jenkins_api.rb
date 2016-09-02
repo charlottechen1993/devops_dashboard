@@ -11,11 +11,7 @@ puts @client.job.list_all
 puts "List of all jobs in targeted jenkins account - with all details (JSON)"
 listallhash = @client.job.list_all_with_details
 puts listallhash
-puts "Test of color to status. This should be blue"
-# puts 
-
-
-
+puts "Test of color to status. This should be blue" 
 
 
 
