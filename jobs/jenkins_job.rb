@@ -2,7 +2,7 @@
 # require 'json'
 # require 'time'
 #
-# JENKINS_URI = URI.parse("http://54.172.252.112")
+# JENKINS_URI = URI.parse("http://54.86.75.233")
 #
 # # the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 # job_mapping = {
