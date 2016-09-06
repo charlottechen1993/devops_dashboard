@@ -8,3 +8,7 @@ tmp/
 .ruby-version
 history.yml
 vendor
+
+# Temporary files
+*~
+\#*\#
