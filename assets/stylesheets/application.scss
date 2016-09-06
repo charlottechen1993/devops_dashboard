@@ -288,3 +288,8 @@ h3 {
     cursor: pointer;
     background-color: #472803 !important;
 }
+
+.project-board:hover{
+    cursor: pointer;
+    outline: 4px solid rgba(255, 255, 255, 0.7);
+}
