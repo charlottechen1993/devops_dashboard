@@ -15,6 +15,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    awesome_print (1.7.0)
     backports (3.6.8)
     buftok (0.2.0)
     builder (3.2.2)
@@ -164,6 +165,8 @@ PLATFORMS
 
 DEPENDENCIES
   actionview
+  activesupport
+  awesome_print
   dashing
   htmlentities
   httparty
