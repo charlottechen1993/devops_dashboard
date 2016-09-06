@@ -9,7 +9,6 @@ gem 'nokogiri'
 gem 'htmlentities'
 gem 'jenkins_api_client'
 #gem 'dotenv'
-gem 'activesupport'
 gem 'jira-ruby', :require => 'jira'
 
 
