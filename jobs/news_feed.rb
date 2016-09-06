@@ -41,7 +41,7 @@ json.take(5).each do |x|
 
     commitObject = Hash.new
     commitObject["label"] = name
-    commitObject["value"] = date
+    commitObject["value"] = Time.parse(date).utc.to_s
 
     # puts commitObject
 
