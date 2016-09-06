@@ -40,14 +40,16 @@ puts build_deets
 puts "This is the build deets array thing AT INDEX 0"
 puts build_deets[0]
 all_build_info = Array.new
-for job in 0..job_list.length-1
-  puts "This is the job list in the loop\n"
-  puts build_deets[job]
-  puts job_list[job]
-  for buildinfo in build_deets[job].length-1
-    all_build_info[job][buildinfo]=@client.job.get_test_results[buildinfo]
-  end
-end
+
+
+#for job in 0..job_list.length-1
+ # puts "This is the job list in the loop\n"
+#    puts build_deets[job]
+ # puts job_list[job]
+  #for buildinfo in build_deets[job].length-1
+   # all_build_info[job][buildinfo]=@client.job.get_test_results[buildinfo]
+  #end
+#end
 
 #p @client.job.get_test_results(job_list[0],5)
 #ADDITIONAL FUNCTIONS TO TEST/IMPLEMENT
