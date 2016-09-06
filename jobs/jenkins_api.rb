@@ -6,27 +6,50 @@ require 'awesome_print'
 
 puts "\n\n---=========== ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
 
-puts "List of all jobs in targeted jenkins account"
+#puts "List of all jobs in targeted jenkins account"
 job_list = @client.job.list_all
 ap job_list
-puts "There are ["+job_list.length.to_s+"] total jobs for this account"
+#puts "There are ["+job_list.length.to_s+"] total jobs for this account"
 
-puts "\nList of all jobs in targeted jenkins account - with all details (JSON)"
+#puts "\nList of all jobs in targeted jenkins account - with all details (JSON)"
 listall_hash = @client.job.list_all_with_details
-ap listall_hash
+#ap listall_hash
 
-puts "\nIterate through job_list and display get_builds for each one"
-puts "This will construct a 3d(ish) hash of all jobs and all build deets"
+#puts "\nIterate through job_list and display get_builds for each one"
+#puts "This will construct a 3d(ish) hash of all jobs and all build deets"
 build_deets = Hash.new #Instantiate hash table
 job_list.each{|i| build_deets[i]=@client.job.get_builds(i,{})}
-ap  build_deets
+#ap  build_deets
 
-puts "\nIterate through job_list and display build status for each one"
+#puts "\nIterate through job_list and display build status for each one"
 current_build_status = Hash.new
 job_list.each{|i| current_build_status[i]=@client.job.get_current_build_status(i)}
-ap current_build_status
+#ap current_build_status
 
-ap @client.job.get_test_results(job_list[0],5)
+#puts "\nGet every detailed build statistic from every job from get_test_results function"
+# all_build_info = Hash.new
+# job_list.each{|key,value|
+#   job.each{|key,value|
+#     all_build_info[j]=@client.job.get_test_results[j]
+#   }
+# }
+puts "This is the job list\n"
+puts job_list
+puts "This is the build deets array thing"
+puts build_deets
+puts "This is the build deets array thing AT INDEX 0"
+puts build_deets[0]
+all_build_info = Array.new
+for job in 0..job_list.length-1
+  puts "This is the job list in the loop\n"
+  puts build_deets[job]
+  puts job_list[job]
+  for buildinfo in build_deets[job].length-1
+    all_build_info[job][buildinfo]=@client.job.get_test_results[buildinfo]
+  end
+end
+
+#p @client.job.get_test_results(job_list[0],5)
 #ADDITIONAL FUNCTIONS TO TEST/IMPLEMENT
 #@client.job.get_build_details(jobname,buildnumber)
 #get_builds(job_name, options = {}) ⇒ Object
@@ -35,7 +58,7 @@ ap @client.job.get_test_results(job_list[0],5)
 #get_test_results(job_name, build_num) ⇒ Object !!
 #list_by_status(status, jobs = []) ⇒ Array<String>
 #list_details(job_name) ⇒ Hash
-#list_details(job_name) ⇒ Hash
+
 
 
 
