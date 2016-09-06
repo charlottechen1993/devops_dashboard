@@ -1,3 +1,5 @@
+=begin
+***** Jira Implementation was out of the scope of this project and thus this job is not used *****
 require 'net/http'
 require 'json'
 
@@ -63,3 +65,4 @@ if session['name'] == 'JSESSIONID'
     end
   end
 end
+=end
