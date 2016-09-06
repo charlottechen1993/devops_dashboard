@@ -274,6 +274,7 @@ h3 {
 
 .jira-board:hover{
     cursor: pointer;
+    background-color: #511b14 !important;
 }
 
 .dashboard-title{
@@ -281,4 +282,9 @@ h3 {
     font-size: 30px;
     text-align: center;
     font-weight: bold;
+}
+
+.trello-board:hover{
+    cursor: pointer;
+    background-color: #472803 !important;
 }
