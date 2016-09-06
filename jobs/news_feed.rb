@@ -3,8 +3,10 @@ require 'date'
 require 'time'
 
 github_url = 'https://api.github.com/repos/'
-repo_owner = 'driabwb'
-repo_name = 'devops-dashboard-Sample-Project'
+# repo_owner = 'driabwb'
+repo_owner = 'charlottechen1993' #For the devops_dashboard project
+# repo_name = 'devops-dashboard-Sample-Project'
+repo_name = 'devops_dashboard'
 
 
 repo_url = 'https://api.github.com/repos/driabwb/devops-dashboard-Sample-Project/commits?access_token=d3718ad0b708998022d2fe23b7486799e0f59e65'
@@ -35,9 +37,12 @@ json.take(5).each do |x|
 
     # puts name
 
+    changedDate = Time.new(date)
+    timeChanged = changedDate.time
+
     commitObject = Hash.new
     commitObject["label"] = name
-    commitObject["value"] = Time.parse(date)
+    commitObject["value"] = changedDate
 
     # puts commitObject
 
