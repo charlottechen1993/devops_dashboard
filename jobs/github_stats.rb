@@ -73,7 +73,7 @@ SCHEDULER.every '2m', :first_in => 0 do |job|
         repo: name,
         forks: fork_num,
         watchers: r.subscribers_count,
-        activity: Time.parse(last_commit_date).utc.to_s,
+        activity: last_commit_date,
         total_contributors: contri_num,
         items: contri_list
     })
