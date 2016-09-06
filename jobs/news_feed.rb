@@ -18,7 +18,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
 
   # puts ("YAYYYYAYAYYAYYA")
 
-  # puts total_url
+  puts total_url
   response = HTTParty.get(total_url)
   json = JSON.parse(response.body)
 
@@ -37,12 +37,11 @@ json.take(5).each do |x|
 
     # puts name
 
-    changedDate = Time.new(date)
-    timeChanged = changedDate.getgm
+    # changedDate = Time.now.utc.iso8601
 
     commitObject = Hash.new
     commitObject["label"] = name
-    commitObject["value"] = changedDate.year
+    commitObject["value"] = date
 
     # puts commitObject
 
