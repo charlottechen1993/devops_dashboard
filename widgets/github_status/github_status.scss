@@ -5,37 +5,33 @@
     background: #2A455C url("/assets/invertocat.png") no-repeat center;
     position: relative;
     overflow: hidden;
-    &.good {color:#396;}
-    &.minor {color:#f29d50;}
-    &.major {color:#c30;}
+    &.good {color:rgb(37, 77, 50); font-weight: bold}
+    &.minor {color:#f29d50; font-weight: bold}
+    &.major {color:#c30; font-weight: bold}
 
     div {
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 
     #latest-message{
-	top: 25px;
-	margin: 0 5px;
-	#message {
-	    background:#ccc;
-	    border-radius:3px;
-	    border:1px solid #ccc;
-	    &.good {
-		background:#eaf4ef;
-		border-color:#99ccb2;
-	    }
-	    &.minor {
-		background:#fdf5ed;
-		border-color:#f8cea7;
-	    }
-	    &.major {
-		background:#f9eae5;
-		border-color:#e5997f;
-	    }
-	}
+        top: 25px;
+        margin: 0 5px;
+        #message {
+            background:#ccc;
+            border-radius:3px;
+            &.good {
+              background: rgba(0,0,0,0);
+            }
+            &.minor {
+              background:rgba(0,0,0,0);
+            }
+            &.major {
+              background:rgba(0,0,0,0);
+            }
+        }
     }
 
     #github-logo{
