@@ -7,7 +7,6 @@
 #= require_tree ../../widgets
 
 console.log("Yeah! The dashboard has started!")
-
 Dashing.on 'ready', ->
   Dashing.widget_margins ||= [5, 5]
   Dashing.widget_base_dimensions ||= [200, 230]
@@ -24,3 +23,7 @@ Dashing.on 'ready', ->
       draggable:
         stop: Dashing.showGridsterInstructions
         start: -> Dashing.currentWidgetPositions = Dashing.getWidgetPositions()
+        items: "none"
+        
+        
+        
