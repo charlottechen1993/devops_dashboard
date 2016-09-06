@@ -26,6 +26,17 @@ class Dashing.GoogleColumn extends Dashing.Widget
       isStacked: @get('is_stacked')
       legend:
         position: @get('legend_position')
+      textStyle:
+        color: @get('legend_color')
+      vAxis:
+        textStyle:
+          color: @get('vaxis_color')
+      hAxis:
+        textStyle:
+          color: @get('haxis_color')
+      tooltip:
+        textStyle:
+          color: @get('tooltip_color')
       animation:
         duration: 500,
         easing: 'out'
