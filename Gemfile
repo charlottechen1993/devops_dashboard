@@ -9,6 +9,7 @@ gem 'nokogiri'
 gem 'htmlentities'
 gem 'jenkins_api_client'
 #gem 'dotenv'
+gem 'jira-ruby', :require => 'jira'
 gem 'activesupport'
 gem 'awesome_print'
 

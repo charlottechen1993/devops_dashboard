@@ -1,45 +1,46 @@
 .widget.widget-github-stats.github_stats {
-  background-color: #659C22;
-  background-image: url("/assets/GitHub-Mark-Light-120px-plus.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+    background-color: #a5c663;
+    background-image: url("/assets/GitHub-Mark-Light-120px-plus.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .title {
-  padding: 10px;
-  font-size: 1.3em;
-  .repo_name {
-    font-weight: bolder;
-  }
+    padding: 10px;
+    font-size: 1.3em;
+    .repo_name {
+        font-weight: bolder;
+    }
 }
+
 .main {
-  text-align: left;
-  color: rgba(255, 255, 255, 0.7);
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
     padding-left: 20px;
     padding-right: 20px;
 }
 
 .widget-github-stats {
-  .label {
-    display: inline-block;
-    text-align: right;
-  }
+    .label {
+        display: inline-block;
+        text-align: right;
+    }
 }
 
 .count {
-  display: inline-block;
-  width: 35%;
-  font-size: 1em;
-  padding: 5px;
-  text-align: left;
-  font-weight: bolder;
+    display: inline-block;
+    width: 35%;
+    font-size: 1em;
+    padding: 5px;
+    text-align: left;
+    font-weight: bolder;
 }
 
 .date {
-  display: inline-block;
-  width: 35%;
-  font-size: 1em;
-  padding: 5px;
-  text-align: left;
-  font-weight: bolder;
+    display: inline-block;
+    width: 35%;
+    font-size: 1em;
+    padding: 5px;
+    text-align: left;
+    font-weight: bolder;
 }
