@@ -262,4 +262,12 @@ h3 {
 
 .return-to-projects:hover{
     cursor: pointer;
+    background-color: #353535 !important;
+}
+.fa-arrow-circle-o-left{
+    transition: all .2s ease-in-out;
+}
+
+.return-to-projects:hover .fa-arrow-circle-o-left{
+    transform: scale(1.2);
 }
