@@ -6,48 +6,36 @@ require 'awesome_print'
 
 puts "\n\n---=========== ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
 
-#puts "List of all jobs in targeted jenkins account"
+puts "Getting jobs from target jenkins server..."
 job_list = @client.job.list_all
 ap job_list
-#puts "There are ["+job_list.length.to_s+"] total jobs for this account"
+puts "-->There are ["+job_list.length.to_s+"] total jobs for this account"
 
-#puts "\nList of all jobs in targeted jenkins account - with all details (JSON)"
+puts "Getting all jobs in targeted jenkins account - with all details (JSON)\n--> OK"
 listall_hash = @client.job.list_all_with_details
 #ap listall_hash
 
-#puts "\nIterate through job_list and display get_builds for each one"
+puts "Creating generalized build details hash per jenkinns job...\n-->OK"
 #puts "This will construct a 3d(ish) hash of all jobs and all build deets"
 build_deets = Hash.new #Instantiate hash table
 job_list.each{|i| build_deets[i]=@client.job.get_builds(i,{})}
 #ap  build_deets
 
-#puts "\nIterate through job_list and display build status for each one"
+puts "Determine build status for each job...\n-->OK"
 current_build_status = Hash.new
 job_list.each{|i| current_build_status[i]=@client.job.get_current_build_status(i)}
 #ap current_build_status
 
-#puts "\nGet every detailed build statistic from every job from get_test_results function"
-# all_build_info = Hash.new
-# job_list.each{|key,value|
-#   job.each{|key,value|
-#     all_build_info[j]=@client.job.get_test_results[j]
-#   }
-# }
-puts "This is the job list\n"
-puts job_list
-puts "This is the build deets array thing"
-puts build_deets
-puts "This is the build deets array thing AT INDEX 0"
-puts build_deets[0]
-all_build_info = Array.new
-for job in 0..job_list.length-1
-  puts "This is the job list in the loop\n"
-  puts build_deets[job]
-  puts job_list[job]
-  for buildinfo in build_deets[job].length-1
-    all_build_info[job][buildinfo]=@client.job.get_test_results[buildinfo]
+puts "Fetching build time information...\n-->OK"
+all_build_info = {}
+build_deets.each do |job,deetsarray|
+  temparray = []
+  for jobdeets in 0..deetsarray.length-1
+    temparray.push(@client.job.get_test_results(job,jobdeets+1))
   end
+  all_build_info.store(job,temparray)
 end
+#ap all_build_info
 
 #p @client.job.get_test_results(job_list[0],5)
 #ADDITIONAL FUNCTIONS TO TEST/IMPLEMENT
@@ -61,7 +49,7 @@ end
 
 
 
-
+puts "\n\n---=========== ROBERT'S JENKINS API DEBUGGING PLAYGROUND ===========--"
 SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('widget_id', { })
 end
