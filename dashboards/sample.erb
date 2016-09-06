@@ -1,56 +1,67 @@
+<!--
 <script type='text/javascript'>
  $(function() {
    Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":1},{"col":2,"row":1,"size_x":2,"size_y":1},{"col":1,"row":3,"size_x":2,"size_y":1},{"col":1,"row":2,"size_x":2,"size_y":1},{"col":4,"row":1,"size_x":1,"size_y":1},{"col":1,"row":3,"size_x":1,"size_y":1},{"col":2,"row":3,"size_x":2,"size_y":1},{"col":3,"row":2,"size_x":2,"size_y":1},{"col":5,"row":1,"size_x":1,"size_y":1},{"col":5,"row":2,"size_x":1,"size_y":1},{"col":4,"row":3,"size_x":1,"size_y":1}]')
  });
  </script>
+-->
 <!--Import javascript files for widget goodness -->
 <% content_for :title do %>DevOps Dashboard - CCBCMS
     <% end %>
         <div class="gridster">
             <ul>
+                <!----------------->
+                <!--  FIRST ROW  -->
+                <!----------------->
                 <!--  Countdown -->
                 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
                     <div data-view="Countdown" data-title="Finish Dashboard!" data-end="06-sep-2016 14:00:00" style="background-color: #222222"></div>
                 </li>
-                <!--  github_stats  -->
+                <!--  Github Status Summary  -->
                  <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
                     <div data-id="charlottechen1993/devops_dashboard" data-view="GithubStats" style="background-color: #581845"></div>
                 </li>
-                <!--  jenkins_graph  -->
-                <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
-                    <div data-id="barchart" data-view="BarChart" data-title="Bar Chart" data-moreinfo=""></div>
-                </li>
-                <!--  Github Commits per Day  -->
-                <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
-                    <div data-id="commits_line_chart" data-view="GoogleLine" data-title="GitHub Commits per Day" style="background-color:#ff5733"></div>
-                </li>
                 <!-- GitHub Commits per User -->
-                <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+                <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
                     <div data-id="charlottechen1993/devops_dashboard" data-view="List" data-title="GitHub Commits per User" style="background-color:#900c3f"></div>
                 </li>
-                <!--  github_status -->
-                <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+                <!--  Github Status -->
+                <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
                     <div data-id="github_status" data-view="GithubStatus" data-title="GitHub Status" style="background-color:#31E161"></div>
                 </li>
-                <!-- Jenkins Build Chart -->
-                <li data-row="3" data-col="2" data-sizex="2" data-sizey="1">
-                    <div data-id="column_chart" data-view="GoogleColumn" data-title="Jenkins Build Chart"></div>
+                
+                <!---------------->
+                <!-- SECOND ROW -->
+                <!---------------->
+                <!--  Github Commits per Day  -->
+                <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+                    <div data-id="commits_line_chart" data-view="GoogleLine" data-title="GitHub Commits per Day" style="background-color:#ff5733"></div>
                 </li>
-                <!-- news_feed -->
-                <li data-row="5" data-col="1" data-sizex="2" data-sizey="1">
+                <!-- Github Last 5 Commits -->
+                <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
                     <div data-id="news_feed" data-view="List" data-title="GitHub Last 5 Commits" style="background-color:#bc311e"></div>
                 </li>
                 <!-- Trello -->
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
                     <div data-id="my-trello-board" data-view="List" data-title="Trello Board" style="background-color: #c70039"></div>
                     <i class="icon-trello icon-background"></i>
                 </li>
-                <!-- Return to Projects Button -->
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-                    <div data-id="back" data-view="Back" data-title="Return to the List of Projects" data-interval="30" onclick="location.href='/projects'" style="background-color:#222222" class="return-to-projects"></div>
-                <!-- View Jira -->
-                <li data-row="5" data-col="1" data-sizex="1" data-sizey="1">
-                    <div data-id="back" data-view="Back" data-title="View Jira Dashboard" data-interval="30" onclick="location.href='https://newhiredevopsdashboard.atlassian.net/'" style="background-color: #d22d2d"></div>
+                
+                <!----------------->
+                <!--  THIRD ROW  -->
+                <!----------------->
+                <!-- Jenkins Build Chart -->
+                <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+                    <div data-id="column_chart" data-view="GoogleColumn" data-title="Jenkins Build Chart"></div>
                 </li>
+                <!-- Go to JIRA -->
+                <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+                    <div data-id="jira" data-view="Jira" data-title="View Jira Dashboard" data-interval="30" onclick="location.href='https://newhiredevopsdashboard.atlassian.net/'" style="background-color: #d22d2d" class="jira-board"></div>
+                </li>
+                <!-- Return to Project Board -->
+                <li data-row="3" data-col="4" data-sizex="2" data-sizey="1">
+                    <div data-id="back" data-view="Back" data-title="Return to the List of Projects" data-interval="30" onclick="location.href='/projects'" style="background-color:#222222" class="return-to-projects"></div>
+                </li>
+                
             </ul>
         </div>

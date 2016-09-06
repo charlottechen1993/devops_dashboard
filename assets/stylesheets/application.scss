@@ -264,10 +264,14 @@ h3 {
     cursor: pointer;
     background-color: #353535 !important;
 }
-.fa-arrow-circle-o-left{
+.fa-arrow-circle-o-right{
     transition: all .2s ease-in-out;
 }
 
-.return-to-projects:hover .fa-arrow-circle-o-left{
+.return-to-projects:hover .fa-arrow-circle-o-right{
     transform: scale(1.2);
+}
+
+.jira-board:hover{
+    cursor: pointer;
 }
