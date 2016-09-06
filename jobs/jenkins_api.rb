@@ -26,6 +26,7 @@ current_build_status = Hash.new
 job_list.each{|i| current_build_status[i]=@client.job.get_current_build_status(i)}
 #ap current_build_status
 
+
 puts "Fetching build time information...\n-->OK"
 all_build_info = {}
 build_deets.each do |job,deetsarray|
