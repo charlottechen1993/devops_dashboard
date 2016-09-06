@@ -3,23 +3,26 @@
     <% end %>
         <div class="gridster">
             <ul>
+                <li data-row="1" data-col="1" data-sizex="5" data-sizey="1" class="dashboard-title">
+                    <div style="background-color: #222222" style="display: block">charlottechen1993/devops_dashboard</div>
+                </li>
                 <!----------------->
                 <!--  FIRST ROW  -->
                 <!----------------->
                 <!--  Countdown -->
-                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <li data-row="1" data-col="1" data-sizex="1" data-sizey="4">
                     <div data-view="Countdown" data-title="Finish Dashboard!" data-end="06-sep-2016 14:00:00" style="background-color: #222222"></div>
                 </li>
                 <!--  Github Status Summary  -->
-                 <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+                 <li data-row="1" data-col="2" data-sizex="2" data-sizey="4">
                     <div data-id="charlottechen1993/devops_dashboard" data-view="GithubStats" style="background-color: #254d32"></div>
                 </li>
                 <!-- GitHub Commits per User -->
-                <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+                <li data-row="1" data-col="4" data-sizex="1" data-sizey="4">
                     <div data-id="charlottechen1993/devops_dashboard" data-view="List" data-title="GitHub Commits per User" style="background-color:#547336"></div>
                 </li>
                 <!--  Github Status -->
-                <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+                <li data-row="1" data-col="5" data-sizex="1" data-sizey="4">
                     <div data-id="github_status" data-view="GithubStatus" data-title="GitHub Status" style="background-color:#978e4b"></div>
                 </li>
                 
@@ -27,15 +30,15 @@
                 <!-- SECOND ROW -->
                 <!---------------->
                 <!--  Github Commits per Day  -->
-                <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+                <li data-row="2" data-col="1" data-sizex="2" data-sizey="4">
                     <div data-id="commits_line_chart" data-view="GoogleLine" data-title="GitHub Commits per Day" style="background-color:#96a84c"></div>
                 </li>
                 <!-- Github Last 5 Commits -->
-                <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
+                <li data-row="2" data-col="3" data-sizex="2" data-sizey="4">
                     <div data-id="news_feed" data-view="List" data-title="GitHub Last 5 Commits" style="background-color:#759159"></div>
                 </li>
                 <!-- Trello -->
-                <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+                <li data-row="2" data-col="5" data-sizex="1" data-sizey="4">
                     <div data-id="my-trello-board" data-view="List" data-title="Trello Board" style="background-color: #5b3400"
                          onclick="location.href='https://trello.com/b/FRQcnUen'"></div>
                     <i class="icon-trello icon-background"></i>
@@ -45,15 +48,15 @@
                 <!--  THIRD ROW  -->
                 <!----------------->
                 <!-- Jenkins Build Chart -->
-                <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+                <li data-row="3" data-col="1" data-sizex="2" data-sizey="4">
                     <div data-id="column_chart" data-view="GoogleColumn" data-title="Jenkins Build Chart" style="background-color: #723c0c"></div>
                 </li>
                 <!-- Go to JIRA -->
-                <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+                <li data-row="3" data-col="3" data-sizex="1" data-sizey="4">
                     <div data-id="jira" data-view="Jira" data-title="View Jira Dashboard" data-interval="30" onclick="location.href='https://newhiredevopsdashboard.atlassian.net/'" style="background-color: #752e1d" class="jira-board"></div>
                 </li>
                 <!-- Return to Project Board -->
-                <li data-row="3" data-col="4" data-sizex="2" data-sizey="1">
+                <li data-row="3" data-col="4" data-sizex="2" data-sizey="4">
                     <div data-id="back" data-view="Back" data-title="Return to the List of Projects" data-interval="30" onclick="location.href='/projects'" style="background-color:#222222" class="return-to-projects"></div>
                 </li>
                 
