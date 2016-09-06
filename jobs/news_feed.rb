@@ -38,11 +38,11 @@ json.take(5).each do |x|
     # puts name
 
     changedDate = Time.new(date)
-    timeChanged = changedDate.time
+    timeChanged = changedDate.getgm
 
     commitObject = Hash.new
     commitObject["label"] = name
-    commitObject["value"] = changedDate
+    commitObject["value"] = changedDate.year
 
     # puts commitObject
 
