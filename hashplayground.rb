@@ -19,3 +19,77 @@
 
 #Output of get_current_build_status
 {"MochaTesting"=>"success", "SamplePipeline"=>"failure"}
+
+#Output of asking for a single job in MochaTesting.
+{
+         "_class" => "hudson.tasks.junit.TestResult",
+    "testActions" => [],
+       "duration" => 0.012,
+          "empty" => false,
+      "failCount" => 0,
+      "passCount" => 3,
+      "skipCount" => 0,
+         "suites" => [
+        [0] {
+                "cases" => [
+                [0] {
+                        "testActions" => [],
+                                "age" => 0,
+                          "className" => "Testing Board Functions Testing Create Board",
+                           "duration" => 0.004,
+                       "errorDetails" => nil,
+                    "errorStackTrace" => nil,
+                        "failedSince" => 0,
+                               "name" => "should give back a board filled with all zeros",
+                            "skipped" => false,
+                     "skippedMessage" => nil,
+                             "status" => "PASSED",
+                             "stderr" => nil,
+                             "stdout" => nil
+                },
+                [1] {
+                        "testActions" => [],
+                                "age" => 0,
+                          "className" => "Testing Board Functions Testing Player Switching",
+                           "duration" => 0.0,
+                       "errorDetails" => nil,
+                    "errorStackTrace" => nil,
+                        "failedSince" => 0,
+                               "name" => "Should change to o when it is currently x",
+                            "skipped" => false,
+                     "skippedMessage" => nil,
+                             "status" => "PASSED",
+                             "stderr" => nil,
+                             "stdout" => nil
+                },
+                [2] {
+                        "testActions" => [],
+                                "age" => 0,
+                          "className" => "Testing Board Functions Testing Player Switching",
+                           "duration" => 0.0,
+                       "errorDetails" => nil,
+                    "errorStackTrace" => nil,
+                        "failedSince" => 0,
+                               "name" => "Should change to x when it is currently o",
+                            "skipped" => false,
+                     "skippedMessage" => nil,
+                             "status" => "PASSED",
+                             "stderr" => nil,
+                             "stdout" => nil
+                }
+            ],
+             "duration" => 0.012,
+                   "id" => nil,
+                 "name" => "Mocha Tests",
+               "stderr" => nil,
+               "stdout" => nil,
+            "timestamp" => "2016-09-01T16:48:13"
+        }
+    ]
+}
+
+{
+    "MochaTesting" => "success"
+}
+I, [2016-09-02T13:32:42.941177 #6020]  INFO -- : Obtaining the test results of 'MochaTesting' Build #5
+{"_class"=>"hudson.tasks.junit.TestResult", "testActions"=>[], "duration"=>0.012, "empty"=>false, "failCount"=>0, "passCount"=>3, "skipCount"=>0, "suites"=>[{"cases"=>[{"testActions"=>[], "age"=>0, "className"=>"Testing Board Functions Testing Create Board", "duration"=>0.004, "errorDetails"=>nil, "errorStackTrace"=>nil, "failedSince"=>0, "name"=>"should give back a board filled with all zeros", "skipped"=>false, "skippedMessage"=>nil, "status"=>"PASSED", "stderr"=>nil, "stdout"=>nil}, {"testActions"=>[], "age"=>0, "className"=>"Testing Board Functions Testing Player Switching", "duration"=>0.0, "errorDetails"=>nil, "errorStackTrace"=>nil, "failedSince"=>0, "name"=>"Should change to o when it is currently x", "skipped"=>false, "skippedMessage"=>nil, "status"=>"PASSED", "stderr"=>nil, "stdout"=>nil}, {"testActions"=>[], "age"=>0, "className"=>"Testing Board Functions Testing Player Switching", "duration"=>0.0, "errorDetails"=>nil, "errorStackTrace"=>nil, "failedSince"=>0, "name"=>"Should change to x when it is currently o", "skipped"=>false, "skippedMessage"=>nil, "status"=>"PASSED", "stderr"=>nil, "stdout"=>nil}], "duration"=>0.012, "id"=>nil, "name"=>"Mocha Tests", "stderr"=>nil, "stdout"=>nil, "timestamp"=>"2016-09-01T16:48:13"}]}

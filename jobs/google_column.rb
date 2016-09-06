@@ -2,10 +2,10 @@
 SCHEDULER.every '1m', :first_in => 0 do |job|
   send_event('column_chart', points: [
       ['Day', 'Builds'],
-      ['Monday',  100],
-      ['Tuesday',  56],
-      ['Wednesday',  169],
-      ['Thursday',  103],
-      ['Friday', 78]
+      ['Monday',  1],
+      ['Tuesday',  2],
+      ['Wednesday',  3],
+      ['Thursday',  1],
+      ['Friday', 2]
   ])
 end
